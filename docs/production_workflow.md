@@ -27,25 +27,36 @@
 
 ---
 
-## 2. Mac 使用者首選：GarageBand ➔ Logic Pro
+## 2. 蘋果生態系：從 iPhone/iPad 到 Mac 專業製作
 
-如果你使用的是 macOS，蘋果生態系內建了全世界最友善且強大的音樂工作站路徑。
+如果你使用 iPhone、iPad 或 Mac，Apple 生態系提供了無縫且免費的音樂製作工作流。只要一隻手機，在通勤或沙發上就能把 TMD 轉成高品質音樂！
 
-### 2.1 入門第一站：GarageBand（Mac 內建免費）
-1. 在 TMD 中匯出 Standard MIDI 檔案：
-   ```bash
-   tmd my_song.tmd -m my_song.mid
-   ```
-2. 打開 GarageBand，直接將 `my_song.mid` 拖曳進專案視窗中。
-3. **自動分軌**：GarageBand 會將鋼琴、弦樂、貝斯與鼓組自動分成獨立軌道。
-4. **更換音色**：點擊左側樂器庫，將預設聲音替換為 Apple 內建的高品質錄音室樂器（例如將 Piano 換成 *Steinway Grand Piano*，將弦樂換成 *Studio Strings*）。
-5. 直接套用內建的空間殘響（Reverb）與壓縮器，立刻就能產出動聽的 Demo。
+### 2.1 行動端：iOS / iPadOS GarageBand（隨身帶著走）
+這是許多人不知道的隱藏神技——在手機上打開 TMD Studio 匯出 MIDI 後，可以直接丟進 iOS 版 GarageBand：
 
-### 2.2 專業進階：Logic Pro（好萊塢與流行音樂工業標準）
-當你需要更極致的細節控制時，可以在 Logic Pro 中直接開啟 GarageBand 專案：
-- **完整混音台與自動化控制**：精準調整每一軌的音量、左右聲道平衡（Panning）與 EQ 頻率分布。
-- **頂級空間效果器（ChromaVerb / Space Designer）**：利用真實世界音樂廳的脈衝響應（Impulse Response），讓你的樂器瞬間置身於維也納金色大廳或好萊塢錄音棚。
-- **母帶製作助手（Mastering Assistant）**：一鍵為你的作品進行多頻段動態響度提升，達到 Spotify、Apple Music 的商業發行響度標準。
+1. **從手機瀏覽器匯出**：
+   - 用 iPhone 或 iPad 打開 TMD Web Studio。
+   - 點擊 `Export` ➔ **MIDI (.mid)**，檔案會存入 iOS「檔案（Files）」App 中。
+2. **匯入 iOS GarageBand**：
+   - 打開 iOS GarageBand，新建一個歌曲（選擇任意軟體樂器軌，例如 Keyboard）。
+   - 點擊右上角的 **迴圈圖示（Loop Browser）** ➔ 切換到 **「檔案（Files）」** 分頁。
+   - 點擊「從檔案 App 瀏覽項目」，選取剛才下載的 `.mid` 檔案。
+   - 將該 MIDI 檔案按住不放，**直接拖曳到時間軸軌道區域**。
+3. **享受 Apple 的行動聲音庫**：
+   - GarageBand 會自動將多軌拆分開來。
+   - 點擊軌道樂器圖示，免費下載 Apple 官方的「聲音資源庫（Sound Library）」：包含 *Toy Box*、*K-Pop*、*Flex & Flow*、*Vintage Mellotron* 等世界級音色包。
+   - 搭配觸控螢幕的 **Touch Instruments** 或 **Smart Strings**，用手指輕輕一滑就能即時加上浪漫的弦樂群掃弦！
+
+### 2.2 行動進階：Logic Pro for iPad
+如果你使用 iPad，Apple 官方的 **Logic Pro for iPad** 更是全功能的觸控旗艦工作站：
+- 完整繼承 Mac 版 Logic 的採樣合成器（Alchemy、Retro Synth）與專業混音台。
+- 支援直接開啟 GarageBand 專案，躺在沙發上就能用 Apple Pencil 繪製表情自動化曲線與做母帶處理。
+
+### 2.3 桌面端：macOS GarageBand ➔ Logic Pro
+當你回到電腦桌前：
+1. 將 TMD 匯出的 `my_song.mid` 拖進 Mac 版 GarageBand。
+2. 更換高品質錄音室音色（如 *Steinway Grand Piano*、*Studio Strings*）。
+3. 當需要商業級精修時，點擊選單 `檔案 ➔ 在 Logic Pro 中打開`，直接解鎖好萊塢級的空間殘響（Space Designer）與智慧母帶助手（Mastering Assistant）。
 
 ---
 
