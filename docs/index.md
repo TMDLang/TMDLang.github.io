@@ -75,3 +75,4 @@ ABC notation 雖然語法較簡單，但一開始是為了紀錄固定音高的�
 - **[與 AI 協同創作大型作品](epic_composing.md)**：透過「分而治之」五步工作流，掌握場景腳本編排、核心動機原子化發展、全曲拼裝、轉場修飾與匯入 DAW 後期混音。
 - **[主導動機與電影感變奏](motif_variation.md)**：學習好萊塢配樂核心手法（Leitmotif），用同一個 4 音動機變奏出「純真童年」、「生離死別」、「絕境反擊」與「深空漫遊」等豐富故事色彩。
 - **[用非 AI 的傳統演算法做音樂生成](algorithmic_music.md)**：探索 100% 確定性與零算力成本的生成音樂——從 TMD 內建 S-Expression 卡農宏語言，到用 Python 實作費氏數列旋律、馬可夫鏈和弦與康威生命遊戲節奏。
+- **[後續製作與音色庫指南](production_workflow.md)**：打通邁向工業級作品的最後一公里——從 MusicXML 匯入 MuseScore 4（Muse Sounds）、MIDI / REAPER 匯入 GarageBand / Logic Pro / REAPER，到掛載 Spitfire BBC 交響樂等頂級虛擬樂器音色庫與表情控制器自動化。
