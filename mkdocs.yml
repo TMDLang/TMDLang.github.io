@@ -60,4 +60,6 @@ nav:
   - VS Code 擴充套件指南: vscode.md
   - TMD 命令列工具（CLI）: cli.md
   - TMD 歌曲分析器: inspector.md
+  - 與 AI 協同寫歌: ai_agent.md
+  - 與 AI 協同創作大型作品: epic_composing.md
   - TMD 語法規格: syntax.md
