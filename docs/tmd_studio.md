@@ -110,51 +110,51 @@ TMD Studio 內建純前端 AI 協作助手，直接在瀏覽器端與大語言�
 
 生成完成後，AI Panel 會提供即時預覽與驗證結果：
 
-- **獨立試聽（▶️ Preview This）**：在覆蓋當前作品前，先點擊試聽 AI 生成的段落是否符合預期。
+- **獨立試聽（▶️ Preview This）**：在套用前，先試聽 AI 生成的段落是否符合預期。
 - **更新編輯區**：
-    - **Replace Current Score**：一鍵將生成的完整樂譜覆蓋更新至主要編輯區。
+    - **Replace Current Score**：將生成的樂譜覆蓋更新至主要編輯區。
     - **Insert at Cursor**：將生成的伴奏軌道或延伸小節插入在游標所在位置。
-- **自動除錯修復（Ask AI to Fix）**：若 AI 生成的小節時值有微小落差，面板會出現紅色的錯誤提示與 **🔧 Ask AI to Fix** 按鈕，點擊後 AI 會自動重新計算並修正小節長度。
+- **自動除錯修復（Ask AI to Fix）**：若 AI 生成的小節時值有落差，面板會顯示錯誤提示與 **🔧 Ask AI to Fix** 按鈕，點擊後 AI 會重新計算並修正小節長度。
 
 !!! note
-    如果不喜歡 AI 產生的結果，您隨時可以用 Ctrl + Z 或 Command + Z 回到上一步。
+    若需要復原編輯操作，可隨時使用 Ctrl + Z 或 Command + Z。
 
 ## 轉換成 MIDI 與樂譜（多格式匯出）
 
-點擊頂部工具列的 **Export 📥**，即可一鍵將作品轉換並下載至您的電腦：
+點擊頂部工具列的 **Export 📥**，即可將作品轉換並下載至您的電腦：
 
 ![TMD Studio 匯出介面](./img_zh/tmd_studio_export.png)
 
-- **Standard MIDI (`.mid`)**：匯入 Logic Pro、Cubase、Ableton Live、FL Studio 或 GarageBand 進行專業編曲與混音。
-- **REAPER 專案檔 (`.rpp`)**：直接生成 REAPER 多軌工程檔，軌道與小節自動定位完成。
-- **MusicXML 4.0 (`.musicxml`)**：匯入 MuseScore、Sibelius 或 Finale 印出排版精美的五線譜與總譜。
-- **LilyPond (`.ly`)**：產生高水準出版級樂譜原始碼。
-- **ABC Notation (`.abc`)**：適合網頁快速簡譜／五線譜渲染。
+- **Standard MIDI (`.mid`)**：匯入 Logic Pro、Cubase、Ableton Live、FL Studio 或 GarageBand 進行編曲與混音。
+- **REAPER 專案檔 (`.rpp`)**：產生 REAPER 多軌工程檔，軌道與小節自動定位。
+- **MusicXML 4.0 (`.musicxml`)**：匯入 MuseScore、Sibelius 或 Finale 排版五線譜與總譜。
+- **LilyPond (`.ly`)**：產生出版級樂譜原始碼。
+- **ABC Notation (`.abc`)**：適用於網頁簡譜／五線譜渲染。
 - **人聲合成專用格式**：
-    - **VOCALOID (`.vsq`, `.vsqx`)**：直接匯入 VOCALOID 編輯器進行虛擬歌手填詞與歌唱調校。
+    - **VOCALOID (`.vsq`, `.vsqx`)**：匯入 VOCALOID 編輯器進行虛擬歌手填詞與調校。
     - **UTAU / OpenUtau (`.ust`)**：支援開源人聲合成軟體工程格式。
-- **WAV 音訊檔**：在瀏覽器中離線渲染高品質音訊下載。
+- **WAV 音訊檔**：在瀏覽器中離線渲染音訊檔案。
 
 ## 編輯區自動補齊與快捷功能
 
-TMD Studio 內建智慧補齊與輔助熱鍵：
+TMD Studio 內建語法補齊與輔助熱鍵：
 
-- **格式化樂譜（Format Document）**：按下 `Cmd/Ctrl + Shift + F`，系統會自動縮排段落、對齊小節線並整理多餘空白。
+- **格式化樂譜（Format Document）**：按下 `Cmd/Ctrl + Shift + F`，自動縮排段落、對齊小節線並整理多餘空白。
 - **自動補齊（Auto-Completion）**：
-    - 輸入段落名稱或軌道時自動提示已有的樂器清單。
-    - 輸入和弦括號 `[` 時自動跳出常用和弦列表（如 `[Cmaj7]`, `[Am7]`, `[6m]` 等）。
-    - 輸入播放順序 `->` 時自動列出檔案中所有已定義的段落名稱。
+    - 輸入段落名稱或軌道時提示已有的樂器清單。
+    - 輸入和弦括號 `[` 時列出常用和弦（如 `[Cmaj7]`, `[Am7]`, `[6m]` 等）。
+    - 輸入播放順序 `->` 時列出檔案中所有已定義的段落名稱。
 
 ## 8. 重新編排與編曲工具
 
-在 **工具 🛠️** 選單中，提供了多項專業編曲重構功能：
+在 **工具 🛠️** 選單中，提供了多項編曲重構功能：
 
-- **細分節奏網格（Subdivide Grid: `<4*>` ➔ `<8*>`）**：將段落中的音符時值自動等比放大，便於填入更細碎的十六分音符或切分裝飾音。
+- **細分節奏網格（Subdivide Grid: `<4*>` ➔ `<8*>`）**：將段落中的音符時值等比放大，便於填入十六分音符或裝飾音。
 - **壓縮節奏網格（Compress Grid: `<8*>` ➔ `<4*>`）**：將網格解析度減半。
-- **樂譜／選取區移調（Transpose）**：一鍵將指定段落或整首歌曲升降半音。
-- **複製軌道（Duplicate Track）**：快速複製現有軌道至新樂器，建立弦樂疊音或多層次合音。
-- **自動生成平行和聲（Generate Harmony）**：選取旋律後自動產生三度或六度平行副旋律。
-- **展開播放順序（Inline Orders to Linear Score）**：將包含反覆與轉調的播放順序展開為平鋪直述的單一連續長篇樂譜。
-- **重新命名與單軌抽出（Rename / Extract Instrument）**：全域批次修改樂器名稱，或單獨將特定樂器抽出成獨立樂譜檔案。
+- **樂譜／選取區移調（Transpose）**：將指定段落或整首歌曲升降半音。
+- **複製軌道（Duplicate Track）**：複製現有軌道至新樂器，建立聲部疊音或合音。
+- **自動生成平行和聲（Generate Harmony）**：選取旋律後產生三度或六度平行副旋律。
+- **展開播放順序（Inline Orders to Linear Score）**：將包含反覆與轉調的播放順序展開為線性排列的連續樂譜。
+- **重新命名與單軌抽出（Rename / Extract Instrument）**：批次修改樂器名稱，或單獨將特定樂器抽出成獨立樂譜檔案。
 
 如果您有程式開發經驗，可以將這些工具理解成重構（Refactoring）工具。TMD 語言用文字表達樂譜，也可以視為是一種可以編譯成 MIDI、MusicXML 等其他格式的程式語言，我們也可以用操作程式碼的方式，修改 TMD 檔案。
