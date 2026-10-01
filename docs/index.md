@@ -77,4 +77,5 @@ ABC notation 雖然語法較簡單，但一開始是為了紀錄固定音高的�
 - **[演算法生成](algorithmic_music.md)**：TMD 巨集語言、費氏數列旋律、馬可夫鏈和弦與生命遊戲節奏。
 - **[奇思妙想](creative_experiments.md)**：用生日、名字、詩詞平仄、RSA 加密與 Git Hash 激發靈感。
 - **[語法規格](syntax.md)**：相對音高、段落宣告、拍號速度、轉調與打擊樂語法規格。
+- **[開發者指南](developer.md)**：npm 套件 `tmdlang`、TypeScript API、AST、多格式匯出器與 MCP/LSP 整合。
 - **[常見問答](faq.md)**：倍率 `<4*>` / `<8*>` 常見失誤、小節校驗抓蟲與 AI 自動修復技巧。
