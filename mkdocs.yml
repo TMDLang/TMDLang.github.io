@@ -1,1 +1,63 @@
-site_name: My Docs
+site_name: TMD - Timebase Markdown
+site_description: 讓心中的旋律，透過簡單的文字，成為第一個可以試聽 MIDI 以及樂譜的工作流。
+site_author: TMD Contributors
+repo_url: https://github.com/TMDLang/TMDLang.github.io
+repo_name: TMDLang/TMDLang.github.io
+
+theme:
+  name: material
+  language: zh-Hant
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 切換為深色模式
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切換為淺色模式
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - 關於 TMD: index.md
+  - TMD Studio 快速上手: tmd_studio.md
+  - VS Code 與本機開發環境: vscode.md
+  - TMD 語法規格: syntax.md
