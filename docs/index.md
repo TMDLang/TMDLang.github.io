@@ -1,8 +1,9 @@
-# TMD
+# TMD 音樂/樂隊電腦語言
 
-> 一套讓心中的旋律，透過簡單的文字，成為第一個可以試聽 MIDI 以及樂譜的工作流
-
-> In memory of Chen, Chih-Han / aguai (阿怪, 1974–2019)
+!!! note "TMD 簡介"
+    - Timebased Markdown / Textual Music Description
+    - 一套讓心中的旋律，透過簡單的文字，成為第一個可以試聽 MIDI 以及樂譜的工作流
+    - In memory of Chen, Chih-Han / aguai (阿怪, 1974–2019)
 
 ## 什麼是 TMD？
 
@@ -20,7 +21,7 @@ TMD 是
 
 其實文字型的 AI，無論是 Gemini、ChatGPT、Claude 等，其實都有撰寫旋律、和弦的的能力，只要能夠將您的旋律變成文字 prompt，各種AI 模型就能夠和您一起完成一份樂譜。在 TMD 的編輯環境中，您可以手動或哼唱輸入一段旋律、轉換成 TMD 語法，即時試聽，然後轉換成 MIDI 或樂譜。
 
-## TMD 的開發背景
+## 開發背景
 
 TMD 最早的創作者是寫出《三天三夜》的音樂人陳志翰（阿怪），在 2016 年時為了自己記譜所做的語法。在阿怪來不及看到的 AI 時代中，TMD 突然又有了不同的意義—人與 AI 之間的協作語言。
 
