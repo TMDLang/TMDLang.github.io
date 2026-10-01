@@ -1,4 +1,4 @@
-site_name: TMD - Timebase Markdown/Textual Music Description
+site_name: TMD
 site_description: 讓心中的旋律，透過簡單的文字，成為第一個可以試聽 MIDI 以及樂譜的工作流。
 site_author: TMD Contributors
 
@@ -9,7 +9,7 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: white
       accent: indigo
       toggle:
         icon: material/brightness-7
@@ -17,7 +17,7 @@ theme:
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: black
       accent: indigo
       toggle:
         icon: material/brightness-4
@@ -59,12 +59,12 @@ nav:
   - TMD Studio: tmd_studio.md
   - VS Code 套件: vscode.md
   - CLI 工具: cli.md
-  - 歌曲分析: inspector.md
+  - 歌曲分析器: inspector.md
   - AI 協同寫歌: ai_agent.md
   - 動機與變奏: motif_variation.md
   - 創作大型作品: epic_composing.md
   - 後期製作: production_workflow.md
-  - 演算法生成: algorithmic_music.md
+  - 演算法生成音樂: algorithmic_music.md
   - 奇思妙想: creative_experiments.md
   - 語法規格: syntax.md
   - 開發者指南: developer.md

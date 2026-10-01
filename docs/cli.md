@@ -7,9 +7,8 @@ TMD CLI 目前提供兩種語言實作版本：
 - **TmdSwift**：macOS / Linux 原生編譯高效能版本（可透過 Homebrew 安裝）。
 - **tmdlang (Node.js)**：跨平台版本（支援 macOS、Linux 與 Windows，透過 npm 發行）。
 
----
 
-## 1. 安裝方式
+## 安裝方式
 
 ### macOS / Linux（推薦透過 Homebrew 安裝 TmdSwift）
 
@@ -31,11 +30,9 @@ npm install -g tmdlang
 tmd --help
 ```
 
----
+## 核心功能與基本指令
 
-## 2. 核心功能與基本指令
-
-### 2.1 解析樂譜結構（`-p, --parse-only`）
+### 解析樂譜結構（`-p, --parse-only`）
 
 僅解析樂譜並在終端機中印出全曲標題、速度、基準音高、小節數與各軌道結構摘要，不產生輸出檔：
 
@@ -43,7 +40,7 @@ tmd --help
 tmd score.tmd -p
 ```
 
-### 2.2 檢查小節長度一致性（`check`）
+### 檢查小節長度一致性（`check`）
 
 檢驗每一小節的時值是否符合拍號（`<4/4>`、`<3/4>` 等）。若有拍數過多或不足，會精確指出出錯的段落、軌道、行號與相差拍數：
 
@@ -53,7 +50,7 @@ tmd check score.tmd
 
 > **提示**：在匯出 MIDI 或其他格式時，TMD 預設會先執行小節檢查。若要忽略檢查強制匯出，可加上 `-f, --force` 參數。
 
-### 2.3 樂譜自動排版（`format`）
+### 樂譜自動排版（`format`）
 
 將樂譜程式碼自動縮排、整理小節線與間距，並完整保留原本的註解內容：
 
@@ -65,9 +62,8 @@ tmd format score.tmd
 tmd format score.tmd -i
 ```
 
----
 
-## 3. 音樂格式匯出與音訊渲染
+## 音樂格式匯出與音訊渲染
 
 TMD 可以編譯並匯出至主流數位音樂工作站（DAW）、打譜軟體與人聲合成器支援的格式：
 
@@ -99,9 +95,8 @@ tmd score.tmd --play --section chorus --instrument Piano
 tmd score.tmd --play --soundfont FluidR3_GM.sf2
 ```
 
----
 
-## 4. 歌曲分析與剖析（`inspect`）
+## 歌曲分析與剖析（`inspect`）
 
 `tmd inspect` 提供類似效能分析器（Profiler）的音樂特徵診斷：
 
@@ -120,13 +115,12 @@ tmd inspect score.tmd
   tmd inspect score.tmd --json
   ```
 
----
 
-## 5. 樂譜重構工具（`refactor`）
+## 樂譜重構工具（`refactor`）
 
 TMD CLI 內建了多項常用的編曲重構工具：
 
-### 5.1 重新命名樂器或段落
+### 重新命名樂器或段落
 
 ```bash
 # 全域重命名樂器（例如將 Piano 改為 GrandPiano）
@@ -136,14 +130,14 @@ tmd refactor rename-instrument score.tmd Piano GrandPiano -i
 tmd refactor rename-section score.tmd A verse -i
 ```
 
-### 5.2 擷取特定樂器為獨立檔案
+### 擷取特定樂器為獨立檔案
 
 ```bash
 # 將 Vocal 旋律軌道單獨抽出儲存為 lead.tmd
 tmd refactor extract-instrument score.tmd Vocal -o lead.tmd
 ```
 
-### 5.3 展開演奏順序為線性樂譜（Inline Orders）
+### 展開演奏順序為線性樂譜（Inline Orders）
 
 將包含重複、轉調（`-> {?+1}`）的播放順序展開為平鋪直述的單一長樂譜：
 
@@ -151,13 +145,12 @@ tmd refactor extract-instrument score.tmd Vocal -o lead.tmd
 tmd refactor inline-orders score.tmd -o linear.tmd
 ```
 
----
 
-## 6. AI Agent 與本機工作流整合
+## AI Agent 與本機工作流整合
 
 TMD CLI 專為人機協同設計，提供了一鍵配置命令，讓本機的 AI 助理具備音樂編寫與診斷能力：
 
-### 6.1 安裝 AI Agent 技能（`--install-skills`）
+### 安裝 AI Agent 技能（`--install-skills`）
 
 ```bash
 tmd --install-skills
@@ -169,7 +162,7 @@ tmd --install-skills
 - **Google Antigravity / Gemini CLI**：`~/.gemini/config/skills/tmd/SKILL.md`
 - **OpenAI Codex**：`~/.codex/skills/tmd/SKILL.md`
 
-### 6.2 註冊 Model Context Protocol 伺服器（`--install-mcp` / `--mcp`）
+### 註冊 Model Context Protocol 伺服器（`--install-mcp` / `--mcp`）
 
 ```bash
 # 自動註冊 TMD MCP 到 Claude Desktop、Cursor 與 Gemini 設定檔中
@@ -179,7 +172,7 @@ tmd --install-mcp
 tmd --mcp
 ```
 
-### 6.3 啟動 Language Server Protocol（`--lsp`）
+### 啟動 Language Server Protocol（`--lsp`）
 
 提供標準的 LSP 服務，支援透過 JSON-RPC 與任何支援 LSP 的現代編輯器介接，提供即時語法檢查與補齊。
 

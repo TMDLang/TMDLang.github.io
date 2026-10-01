@@ -72,6 +72,9 @@ verse:Piano@|0|{
 - **段落單獨試聽**：只想聽特定段落或特定副歌時，只需在播放順序中調整，例如改為 `-> chorus ->#`，即可立刻聚焦打磨該段落。
 - **Web MIDI 硬體支援**：支援將 MIDI 信號直接輸出至外部實體合成器或鍵盤設備。
 
+!!! note
+    因為網頁的限制，呈現的音色不盡理想，您也可以下載 MIDI 之後，再繼續在 DAW 試聽效果。
+
 ## 使用 AI 協同創作
 
 TMD Studio 內建純前端 AI 協作助手，直接在瀏覽器端與大語言模型（如 OpenAI、Google Gemini、Anthropic Claude、DeepSeek 或本機 Ollama）連線。AI 能理解 TMD 語法，協助你自動配器、發展動機、編配和弦或檢查語法。

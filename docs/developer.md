@@ -4,7 +4,6 @@ TMD 不僅是一門為人類創作者設計的樂譜標記語言，也是一個�
 
 透過官方 npm 套件 **`tmdlang`**，你可以將 TMD 的語法解析、小節長度檢查、AST 遍歷、多格式轉檔（MIDI / MusicXML / WAV / REAPER / VOCALOID）以及 MCP AI 工具無縫整合進你的 Node.js、TypeScript、Web 應用程式或自動化腳本中。
 
----
 
 ## 1. 安裝套件
 
@@ -12,7 +11,6 @@ TMD 不僅是一門為人類創作者設計的樂譜標記語言，也是一個�
 npm install tmdlang
 ```
 
----
 
 ## 2. 核心 API 快速上手
 
@@ -91,7 +89,6 @@ fs.writeFileSync('output.mid', Buffer.from(midiBytes));
 console.log('成功生成 output.mid');
 ```
 
----
 
 ## 3. 多格式生成器（Exporters）
 
@@ -129,7 +126,6 @@ const chordProLeadSheet = TMDChordProGenerator.generateChordPro(sheet);
 const wavBytes: Uint8Array = TMDWAVRenderer.renderWAV(sheet);
 ```
 
----
 
 ## 4. Model Context Protocol (MCP) 伺服器
 
@@ -171,7 +167,6 @@ npx tmdlang --install-mcp
 | `check_tmd` | 校驗小節拍數、節奏完整度與播放流程，回報具體錯誤小節 | `text` 或 `filePath` |
 | `convert_tmd` | 將樂譜轉換為指定目標格式（`midi`, `musicxml`, `wav`, `reaper` 等） | `text`, `format`, `outputPath` |
 
----
 
 ## 5. 語言伺服器協定（LSP）支援
 
