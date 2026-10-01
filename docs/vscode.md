@@ -1,185 +1,145 @@
-# Visual Studio Code 以及 TMD 本機開發環境
+# Visual Studio Code 擴充套件指南
 
-除了網頁版 TMD Studio 之外，TMD 提供了完整的本機命令列工具（CLI）、VS Code 擴充套件、Model Context Protocol (MCP) Server 以及 AI Agent Skill，讓您可以將音樂創作無縫整合至現代開發者工作流與各類 AI 工具中。
-
----
-
-## 1. 安裝 TMD TS (Node.js) 版本
-
-TMD 的 TypeScript/JavaScript 實作可在任何安裝有 Node.js 的環境（macOS、Linux、Windows）下執行。
-
-### 系統需求
-
-- Node.js `v20.0.0` 或更新版本。
-
-### 全域安裝 CLI 工具
-
-透過 `npm` 全域安裝：
-
-```bash
-npm install -g tmd-ts
-```
-
-安裝完成後，您即可在終端機中直接使用 `tmd` 指令：
-
-```bash
-tmd --help
-```
-
-亦可透過 `npx` 免安裝直接執行：
-
-```bash
-npx tmd-ts score.tmd -m score.mid
-```
+TMD 官方為 **Visual Studio Code**（以及 Cursor、VSCodium 等相容編輯器）提供了專屬擴充套件，將專業音樂工作站的各項功能直接搬進程式碼編輯器中，讓音樂創作享有與寫程式一樣流暢的體驗。
 
 ---
 
-## 2. 安裝 TMD Swift (原生命令列版本)
+## 1. 安裝與設定
 
-如果您使用 macOS 或偏好原生編譯的高效能工具，可以使用 Swift 實作版本。
-
-### 透過 Homebrew 安裝 (macOS / Linux)
-
-```bash
-brew tap zonble/tmd
-brew tap --trust zonble/tmd  # 允許第三方 Tap
-brew install tmd
-```
-
-### 從原始碼編譯
-
-```bash
-git clone https://github.com/zonble/TmdSwift.git
-cd TmdSwift
-swift build -c release
-# 執行檔產出於 .build/release/tmd
-```
-
----
-
-## 3. 其他必要與推薦套件
-
-若要使用完整的格式輸出與樂譜排版功能，建議視需要安裝以下外部工具：
-
-- **LilyPond**（產生高階五線譜 PDF 檔案）：
-
-  ```bash
-  brew install lilypond
-  ```
-
-- **MuseScore** 或 **Sibelius**（檢視與播放匯出的 `.musicxml` 檔案）。
-- **FluidSynth / SoundFont**（在命令列直接試聽或離線合成音訊）。
-
----
-
-## 4. 安裝 VS Code Extension
-
-在 Visual Studio Code 中編輯 TMD 檔案可享有絕佳的記譜體驗：
+### 方式 A：從市集安裝
 
 1. 開啟 VS Code。
-2. 進入擴充套件市集（Extensions，快速鍵 `Cmd+Shift+X` 或 `Ctrl+Shift+X`）。
+2. 切換至延伸模組面板（快速鍵 `Cmd+Shift+X` 或 `Ctrl+Shift+X`）。
 3. 搜尋 `TMD` 或 `Timebase Mark Down`。
-4. 點選 **Install** 安裝擴充套件。
+4. 點選 **安裝（Install）**。
 
-### VS Code 提供的功能
+### 方式 B：本地安裝指令碼（開發／免市集）
 
-- **語法高亮（Syntax Highlighting）**：精確標示標題、速度、拍號、唱名數字、升降八度與和弦符號。
-- **即時診斷與小節檢查（Diagnostics）**：當小節拍數不足或超出拍號時，編輯器內直接出現紅色波浪線提示。
-- **快捷自動補齊（Snippets & Completions）**：輸入 `sec` 或 `chord` 快速產生段落模板。
-- **樂譜預覽與快捷編譯**：一鍵將當前檔案編譯為 MIDI 或呼叫本機播放。
+如果您已經 clone 了 [TmdSwift](https://github.com/zonble/TmdSwift) 儲存庫，可直接使用內建指令碼安裝：
+
+```bash
+# 建立 Symlink 連結（推薦開發者使用）
+./scripts/install-vscode-extension.sh
+
+# 或以獨立複製模式安裝
+./scripts/install-vscode-extension.sh --copy
+```
+
+安裝後在 VS Code 按下 `Cmd+Shift+P` ➔ 選擇 **Developer: Reload Window** 即可生效。
+
+### 本機 CLI 依賴
+
+擴充套件的進階匯出與分析功能會自動偵測本機的 `tmd` 執行檔（預設搜尋 `/usr/local/bin/tmd`、`/opt/homebrew/bin/tmd`、`~/.local/bin/tmd` 或系統 `PATH`）。如果使用自訂路徑，可在 VS Code 設定搜尋 `tmd.executablePath` 進行指定。
 
 ---
 
-## 5. 安裝 TMD SKILL 與 TMD MCP Server
+## 2. 語法高亮與智慧程式碼片段（Snippets）
 
-為了讓您的本機 AI 助理（如 Claude Desktop、Cursor、Gemini CLI、Antigravity、Codex）理解 TMD 並協助您編曲，TMD 提供了一鍵安裝命令：
+打開任何 `.tmd` 檔案，擴充套件會提供專屬的語法突顯與結構摺疊：
 
-### 5.1 安裝 AI Agent Skill
-
-執行以下指令，系統會自動將 TMD 記譜規範、動機發展原則與對位法技巧安裝到本機的 AI Agent 設定目錄中：
-
-```bash
-tmd --install-skills
-```
-
-支援自動偵測配置的 Agent 包括：
-
-- Google Antigravity / Gemini CLI
-- Claude Code
-- OpenAI Codex
-
-### 5.2 安裝 Model Context Protocol (MCP) Server
-
-透過 MCP，AI 模型可以在交談過程中直接讀取、驗證、排錯或產生 TMD 樂譜：
-
-```bash
-# 自動註冊 TMD MCP 到 Claude Desktop、Cursor 與 Gemini 設定檔
-tmd --install-mcp
-```
-
-您也可以手動以 stdio 啟動 MCP 伺服器：
-
-```bash
-tmd --mcp
-```
+- **精確色彩高亮**：
+    - 樂譜標頭 `::SCORE::` 與標題 `** 標題 **`。
+    - 拍號 `<4/4>`、速度 `!= 120`、基準音高 `?= C` 與調性 `key= Bm`。
+    - 唱名音符數字 `1`–`7`、升降記號 `'` / `,` 與八度標記 `^` / `_`。
+    - 和弦標記 `[Cmaj7]`、`[1]`、`[6m]`。
+    - 演奏流程 `-> intro -> verse ->#`。
+- **程式碼區塊摺疊**：支援以段落 `{ ... }` 為單位進行展開與摺疊。
+- **快速程式碼片段（Snippets）**：
+    - 輸入 `score` ➔ 按 Tab 快速產生完整樂譜範本。
+    - 輸入 `para` ➔ 產生樂器軌道段落區塊（`name:Instrument@|0|{ ... }`）。
+    - 輸入 `sec` ➔ 插入節奏網格細分（`<4*>`）。
+    - 輸入 `tup` ➔ 插入三連音等節奏群組（`%(---)`）。
+    - 輸入 `ch` ➔ 快速插入和弦語法（`[...]`）。
 
 ---
 
-## 6. 使用 Web MCP 呼叫 TMD
+## 3. 即時小節檢查與診斷（Live Diagnostics）
 
-在支援 Web MCP 的現代瀏覽器或雲端 AI 介面中，TMD Studio 亦支援透過標準 Web MCP 端點進行遠端互動：
+VS Code 延伸模組內建了即時節奏編譯器，在您輸入或儲存檔案時自動檢查小節拍數：
 
-- **即時小節驗證（`checkTmd` / `check_tmd`）**：傳入 TMD 文字，工具回傳小節長度檢查結果與詳細差異清單。
-- **樂譜結構解析（`parseTmd`）**：分析段落結構、樂器分配與播放流程。
-- **音樂轉檔與匯出**：透過 API 直接取得編譯後的 MIDI 或 MusicXML 資料。
+- **紅色波浪線提示**：若某個小節的拍數多出或短少（例如 `<4/4>` 拍號下只寫了 3 拍），編輯器會立即在該小節下方繪製警告波浪線。
+- **問題面板整合（Problems View）**：在 VS Code 底部的 **Problems（問題）** 面板中，會條列出所有出錯的段落名稱、小節序號、預期拍數與實際拍數差距，點擊即可跳轉至出錯行。
 
 ---
 
-## 7. 在 CLI Agent 中與 TMD 互動（人機協同工作流）
+## 4. 側邊欄專屬工作區（TMD Studio 活動列）
 
-在終端機或 AI Coding Agent 中，您可以直接以自然語言指揮 AI 與 TMD 工具進行雙向互動：
+點擊 VS Code 左側活動列的 **TMD 圖示**，即可展開專屬的側邊欄面板：
 
-### 常見協作指令範例
+### 1. 大綱與段落導覽（TMD Outline）
 
-#### 1. 小節檢查與語法自我修復
+自動解析目前樂譜中的所有段落（`intro`、`verse`、`chorus` 等）與各軌道樂器清單。
 
-```bash
-# 讓 AI 檢查小節長度
-tmd check my_song.tmd
-```
+- 點擊段落直接跳轉至對應程式碼位置。
+- 提供直覺的快捷按鈕，可直接單獨播放選定段落或軌道。
 
-如果發現小節拍數不符，AI 會根據報錯訊息（例如第 12 行短少 1 拍）自動補足延音線 `-` 或休止符 `0`。
+### 2. 歌曲分析器（Song Inspector）
 
-#### 2. 自動格式化排版
+內建視覺化 Webview 儀表板，即時呈現：
 
-```bash
-tmd format my_song.tmd -i
-```
+- **歌手音域分析（Vocal Tessitura）**：顯示主旋律最高音、最低音、跨越半音數與聲部難易度評估（Soprano / Tenor 等）。
+- **調性推論與五度圈軌跡**：利用 K-S 演算法分析調性吻合度與離調轉調走向。
+- **編曲密度統計**：全曲總小節數、演奏時間與同時發聲的音符密度分布。
 
-自動調整縮排與對齊，維持樂譜整潔。
+### 3. 虛擬鋼琴鍵盤（Virtual Keyboard）
 
-#### 3. 歌曲結構與音域剖析
+提供可點擊試聽的互動式鋼琴鍵盤，可將音符直接插入至編輯器游標所在位置。
 
-```bash
-tmd inspect my_song.tmd
-```
+### 4. 哼唱轉譜（Hum to TMD）
 
-印出終端機 ASCII 報表，檢視最高音、最低音、跨越半音數與調性吻合度。
+透過側邊面板啟動麥克風錄音，利用 Basic Pitch 演算法進行即時人聲哼唱辨識，自動轉換為簡譜段落並填入編輯區。
 
-#### 4. 終端機即時試聽與快速轉檔
+---
 
-```bash
-# 終端機播放試聽
-tmd my_song.tmd --play
+## 5. 互動式播放器與多格式匯出
 
-# 匯出 MIDI
-tmd my_song.tmd -m my_song.mid
+在編輯器右上角按鈕、右鍵選單或按 `Cmd+Shift+P` 叫出命令面板（輸入 `TMD:`）即可使用豐富的功能：
 
-# 輸出 MusicXML
-tmd my_song.tmd -x my_song.musicxml
+### 試聽與播放
 
-# 渲染 WAV 音訊
-tmd my_song.tmd -w preview.wav
-```
+- **TMD: Open Web MIDI Player**：開啟內建的 Web MIDI 合成器播放器面板，支援 FluidR3 平台鋼琴音色、多軌 GM 音色與 Chiptune 8-bit 音效。
+- **TMD: Play Audio Preview in Terminal**：直接在終端機背景播放即時音訊。
+- **TMD: Play Current Section / Track**：單獨試聽游標所在的段落或單軌。
 
-透過這些本機工具鏈，創作者只需負責哼唱或編寫核心旋律，其餘繁瑣的多軌配器、和弦編排、小節校驗與檔案轉檔皆可由 AI 與 TMD CLI 高效完成！
+### 格式匯出（Export）
+
+- **匯出為 MIDI** (`.mid`)：供 Logic Pro / Cubase / FL Studio 載入。
+- **匯出為 MusicXML** (`.musicxml`)：供 MuseScore / Sibelius 排版五線譜。
+- **匯出為 LilyPond** (`.ly`) 或**繪製成 PDF** (`.pdf`)：高水準出版印刷樂譜。
+- **匯出為 ABC 記譜法** (`.abc`)。
+- **渲染為 WAV 音訊** (`.wav`)。
+- **虛擬歌手格式**：匯出為 VOCALOID (`.vsq`, `.vsqx`) 或 UTAU (`.ust`) 專案檔。
+
+---
+
+## 6. 編曲重構工具（Refactoring）
+
+選取樂譜片段或直接在文件中點擊右鍵，可使用一系列快速重構指令：
+
+- **TMD: Format Document**（快速鍵 `Shift+Option+F` / `Shift+Alt+F`）：自動縮排、整理小節線與空格。
+- **網格解析度調整**：
+    - **Double Grid**：`<4*>` ➔ `<8*>`（解析度加倍）。
+    - **Halve Grid**：`<8*>` ➔ `<4*>`（解析度減半）。
+    - **Optimize Grid**：自動計算全曲最小冗餘網格。
+- **移調**：整首歌曲或選取區域平移指定半音數。
+- **軌道操作**：複製軌道、自動生成平行三度／六度合音軌道、抽出單一樂器。
+- **展開演奏順序（Inline Orders）**：將包含反覆與轉調的流程展開為單一線性樂譜。
+
+---
+
+## 7. GitHub Copilot 與 AI Chat 深度整合
+
+TMD VS Code 擴充套件原生支援 GitHub Copilot Chat 與語言模型工具（Language Model Tools）：
+
+### Copilot Chat Participant（`@tmd`）
+
+在 VS Code Copilot Chat 視窗中輸入 `@tmd` 即可呼叫專屬音樂助理：
+
+- `@tmd /compose`：描述風格與旋律動機，讓 Copilot 協助你撰寫多軌 TMD 段落。
+- `@tmd /check`：檢查當前檔案中的小節長度、拍數計算與語法問題。
+- `@tmd /fix`：自動修復小節拍數不符或遺漏的延音線。
+- `@tmd /explain`：解說樂譜結構、和弦進行與首調唱名關係。
+
+### Language Model Tools
+
+擴充套件向 VS Code 註冊了 `tmd_check`、`tmd_format` 與 `tmd_get_specification` 等工具，其他相容的 AI Agent（如 Claude、Cursor Agent）可直接呼叫這些工具來驗證與排版樂譜。

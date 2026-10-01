@@ -68,4 +68,6 @@ ABC notation 雖然語法較簡單，但一開始是為了紀錄固定音高的�
 
 - **[TMD 語法規格](syntax.md)**：深入了解 TMD 的相對音高、段落宣告、拍號速度與轉調等標記規則。
 - **[TMD Studio 網頁版編輯環境](tmd_studio.md)**：無需安裝環境，打開瀏覽器就能透過哼唱或手動輸入旋律、即時試聽並匯出 MIDI。
-- **[VS Code 與本機開發環境](vscode.md)**：安裝 VS Code 擴充套件、本地編譯工具、CLI Agent、TMD SKILL 與 MCP Server，打造完整的 AI 音樂創作工作流。
+- **[VS Code 擴充套件指南](vscode.md)**：安裝 VS Code 擴充套件，享受語法高亮、即時小節錯誤診斷、側邊欄歌曲分析器、虛擬鋼琴與 GitHub Copilot AI 協同創作。
+- **[TMD 命令列工具（CLI）](cli.md)**：透過終端機執行樂譜解析、小節長度自動校驗、音訊即時預覽、格式轉檔，以及安裝 AI Agent 專用 Skill 與 MCP Server。
+- **[TMD 歌曲分析器（Inspector）](inspector.md)**：深入了解歌手音域（Vocal Tessitura）、K-S 認知演算法調性推論、五度圈轉調軌跡與樂器編配密度分析。

@@ -1,8 +1,6 @@
-site_name: TMD - Timebase Markdown
+site_name: TMD - Timebase Markdown/Textual Music Description
 site_description: 讓心中的旋律，透過簡單的文字，成為第一個可以試聽 MIDI 以及樂譜的工作流。
 site_author: TMD Contributors
-repo_url: https://github.com/TMDLang/TMDLang.github.io
-repo_name: TMDLang/TMDLang.github.io
 
 theme:
   name: material
@@ -59,5 +57,7 @@ markdown_extensions:
 nav:
   - 關於 TMD: index.md
   - TMD Studio 快速上手: tmd_studio.md
-  - VS Code 與本機開發環境: vscode.md
+  - VS Code 擴充套件指南: vscode.md
+  - TMD 命令列工具（CLI）: cli.md
+  - TMD 歌曲分析器: inspector.md
   - TMD 語法規格: syntax.md
