@@ -76,4 +76,5 @@ ABC notation 雖然語法較簡單，但一開始是為了紀錄固定音高的�
 - **[主導動機與電影感變奏](motif_variation.md)**：學習好萊塢配樂核心手法（Leitmotif），用同一個 4 音動機變奏出「純真童年」、「生離死別」、「絕境反擊」與「深空漫遊」等豐富故事色彩。
 - **[用非 AI 的傳統演算法做音樂生成](algorithmic_music.md)**：探索 100% 確定性與零算力成本的生成音樂——從 TMD 內建 S-Expression 卡農宏語言，到用 Python 實作費氏數列旋律、馬可夫鏈和弦與康威生命遊戲節奏。
 - **[後續製作與音色庫指南](production_workflow.md)**：打通邁向工業級作品的最後一公里——從 MusicXML 匯入 MuseScore 4（Muse Sounds）、MIDI / REAPER 匯入 GarageBand / Logic Pro / REAPER，到掛載 Spitfire BBC 交響樂等頂級虛擬樂器音色庫與表情控制器自動化。
+- **[發揮你的奇思妙想：用現實世界的數據與概念譜曲](creative_experiments.md)**：將非音樂概念（RSA 加密、Git Commit Hash 雙重賦格、城市 GPS 座標變奏曲）轉化為音樂動機，擺脫靈感枯竭。
 - **[常見問答與疑難排解（FAQ）](faq.md)**：精選最常見語法地雷（如忘記切換 `<4*>` 與 `<8*>` 倍率）、小節拍數校驗抓蟲秘訣、基準音高 `?=` 與調性關係，以及 Channel 10 鼓組排錯。
