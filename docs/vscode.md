@@ -1,4 +1,4 @@
-# Visual Studio Code 擴充套件指南
+# VS Code 套件
 
 TMD 官方為 **Visual Studio Code**（以及 Cursor、VSCodium 等相容編輯器）提供了專屬擴充套件，將專業音樂工作站的各項功能直接搬進程式碼編輯器中，讓音樂創作享有與寫程式一樣流暢的體驗。
 

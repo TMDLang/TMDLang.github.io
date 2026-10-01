@@ -1,4 +1,4 @@
-# 用非 AI 的傳統演算法做音樂生成（Algorithmic Composition）
+# 演算法生成
 
 在生成式 AI（LLM、Diffusion）大行其道之前，電腦音樂領域早在數十年前就發展出極為嚴謹的**演算法音樂（Algorithmic Composition）**。
 

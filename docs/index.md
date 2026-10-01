@@ -66,15 +66,15 @@ ABC notation 雖然語法較簡單，但一開始是為了紀錄固定音高的�
 
 想開始體驗 TMD，您可以從以下章節逐步探索：
 
-- **[TMD 語法規格](syntax.md)**：深入了解 TMD 的相對音高、段落宣告、拍號速度與轉調等標記規則。
-- **[TMD Studio 網頁版編輯環境](tmd_studio.md)**：無需安裝環境，打開瀏覽器就能透過哼唱或手動輸入旋律、即時試聽並匯出 MIDI。
-- **[VS Code 擴充套件指南](vscode.md)**：安裝 VS Code 擴充套件，享受語法高亮、即時小節錯誤診斷、側邊欄歌曲分析器、虛擬鋼琴與 GitHub Copilot AI 協同創作。
-- **[TMD 命令列工具（CLI）](cli.md)**：透過終端機執行樂譜解析、小節長度自動校驗、音訊即時預覽、格式轉檔，以及安裝 AI Agent 專用 Skill 與 MCP Server。
-- **[TMD 歌曲分析器（Inspector）](inspector.md)**：深入了解歌手音域（Vocal Tessitura）、K-S 認知演算法調性推論、五度圈轉調軌跡與樂器編配密度分析。
-- **[在 Chat AI 中與 AI 結伴寫歌](ai_agent.md)**：掌握五種人機協同寫歌模式（配器、動機發展、和弦重配、層次編排、全曲架構），以及即時試聽除錯閉環與實用提示詞模板。
-- **[與 AI 協同創作大型作品](epic_composing.md)**：透過「分而治之」五步工作流，掌握場景腳本編排、核心動機原子化發展、全曲拼裝、轉場修飾與匯入 DAW 後期混音。
-- **[主導動機與電影感變奏](motif_variation.md)**：學習好萊塢配樂核心手法（Leitmotif），用同一個 4 音動機變奏出「純真童年」、「生離死別」、「絕境反擊」與「深空漫遊」等豐富故事色彩。
-- **[用非 AI 的傳統演算法做音樂生成](algorithmic_music.md)**：探索 100% 確定性與零算力成本的生成音樂——從 TMD 內建 S-Expression 卡農宏語言，到用 Python 實作費氏數列旋律、馬可夫鏈和弦與康威生命遊戲節奏。
-- **[後續製作與音色庫指南](production_workflow.md)**：打通邁向工業級作品的最後一公里——從 MusicXML 匯入 MuseScore 4（Muse Sounds）、MIDI / REAPER 匯入 GarageBand / Logic Pro / REAPER，到掛載 Spitfire BBC 交響樂等頂級虛擬樂器音色庫與表情控制器自動化。
-- **[發揮你的奇思妙想：用現實世界的數據與概念譜曲](creative_experiments.md)**：將非音樂概念（RSA 加密、Git Commit Hash 雙重賦格、城市 GPS 座標變奏曲）轉化為音樂動機，擺脫靈感枯竭。
-- **[常見問答與疑難排解（FAQ）](faq.md)**：精選最常見語法地雷（如忘記切換 `<4*>` 與 `<8*>` 倍率）、小節拍數校驗抓蟲秘訣、基準音高 `?=` 與調性關係，以及 Channel 10 鼓組排錯。
+- **[TMD Studio](tmd_studio.md)**：網頁版編輯環境，支援瀏覽器即時試聽、AI 協同寫歌、哼唱轉譜與多種格式匯出。
+- **[VS Code 套件](vscode.md)**：語法高亮、即時小節錯誤診斷、側邊欄歌曲分析器與 GitHub Copilot AI 整合。
+- **[CLI 工具](cli.md)**：命令列樂譜解析、小節長度校驗、音訊預覽、轉檔與 AI Agent/MCP 整合。
+- **[歌曲分析](inspector.md)**：歌手音域（Vocal Tessitura）、K-S 調性認知演算法與五度圈分析。
+- **[AI 協同寫歌](ai_agent.md)**：五大人機協同模式、即時試聽除錯閉環與實用提示詞模板。
+- **[動機與變奏](motif_variation.md)**：電影感主導動機（Leitmotif）與四種場景氛圍變奏。
+- **[創作大型作品](epic_composing.md)**：「分而治之」工作流，從場景腳本、動機發展到全曲拼裝。
+- **[後期製作](production_workflow.md)**：串接 MuseScore、GarageBand、Logic Pro、REAPER 與頂級虛擬音色庫。
+- **[演算法生成](algorithmic_music.md)**：TMD 巨集語言、費氏數列旋律、馬可夫鏈和弦與生命遊戲節奏。
+- **[奇思妙想](creative_experiments.md)**：用生日、名字、詩詞平仄、RSA 加密與 Git Hash 激發靈感。
+- **[語法規格](syntax.md)**：相對音高、段落宣告、拍號速度、轉調與打擊樂語法規格。
+- **[常見問答](faq.md)**：倍率 `<4*>` / `<8*>` 常見失誤、小節校驗抓蟲與 AI 自動修復技巧。

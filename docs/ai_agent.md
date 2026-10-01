@@ -1,4 +1,4 @@
-# 在 Chat AI 中與 AI 結伴寫歌（AI Co-Composing）
+# AI 協同寫歌
 
 無論你使用的是 ChatGPT、Claude、Google Gemini，或是終端機與編輯器中的 AI 助手（如 Claude Code、Cursor、GitHub Copilot、Antigravity），**純文字的 TMD 是人類與 AI 之間最理想的音樂協作語言**。
 
