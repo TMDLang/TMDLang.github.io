@@ -9,20 +9,25 @@
 TMD 的 TypeScript/JavaScript 實作可在任何安裝有 Node.js 的環境（macOS、Linux、Windows）下執行。
 
 ### 系統需求
+
 - Node.js `v20.0.0` 或更新版本。
 
 ### 全域安裝 CLI 工具
+
 透過 `npm` 全域安裝：
+
 ```bash
 npm install -g tmd-ts
 ```
 
 安裝完成後，您即可在終端機中直接使用 `tmd` 指令：
+
 ```bash
 tmd --help
 ```
 
 亦可透過 `npx` 免安裝直接執行：
+
 ```bash
 npx tmd-ts score.tmd -m score.mid
 ```
@@ -34,6 +39,7 @@ npx tmd-ts score.tmd -m score.mid
 如果您使用 macOS 或偏好原生編譯的高效能工具，可以使用 Swift 實作版本。
 
 ### 透過 Homebrew 安裝 (macOS / Linux)
+
 ```bash
 brew tap zonble/tmd
 brew tap --trust zonble/tmd  # 允許第三方 Tap
@@ -41,6 +47,7 @@ brew install tmd
 ```
 
 ### 從原始碼編譯
+
 ```bash
 git clone https://github.com/zonble/TmdSwift.git
 cd TmdSwift
@@ -55,9 +62,11 @@ swift build -c release
 若要使用完整的格式輸出與樂譜排版功能，建議視需要安裝以下外部工具：
 
 - **LilyPond**（產生高階五線譜 PDF 檔案）：
+
   ```bash
   brew install lilypond
   ```
+
 - **MuseScore** 或 **Sibelius**（檢視與播放匯出的 `.musicxml` 檔案）。
 - **FluidSynth / SoundFont**（在命令列直接試聽或離線合成音訊）。
 
@@ -73,6 +82,7 @@ swift build -c release
 4. 點選 **Install** 安裝擴充套件。
 
 ### VS Code 提供的功能
+
 - **語法高亮（Syntax Highlighting）**：精確標示標題、速度、拍號、唱名數字、升降八度與和弦符號。
 - **即時診斷與小節檢查（Diagnostics）**：當小節拍數不足或超出拍號時，編輯器內直接出現紅色波浪線提示。
 - **快捷自動補齊（Snippets & Completions）**：輸入 `sec` 或 `chord` 快速產生段落模板。
@@ -85,24 +95,30 @@ swift build -c release
 為了讓您的本機 AI 助理（如 Claude Desktop、Cursor、Gemini CLI、Antigravity、Codex）理解 TMD 並協助您編曲，TMD 提供了一鍵安裝命令：
 
 ### 5.1 安裝 AI Agent Skill
+
 執行以下指令，系統會自動將 TMD 記譜規範、動機發展原則與對位法技巧安裝到本機的 AI Agent 設定目錄中：
+
 ```bash
 tmd --install-skills
 ```
 
 支援自動偵測配置的 Agent 包括：
+
 - Google Antigravity / Gemini CLI
 - Claude Code
 - OpenAI Codex
 
 ### 5.2 安裝 Model Context Protocol (MCP) Server
+
 透過 MCP，AI 模型可以在交談過程中直接讀取、驗證、排錯或產生 TMD 樂譜：
+
 ```bash
 # 自動註冊 TMD MCP 到 Claude Desktop、Cursor 與 Gemini 設定檔
 tmd --install-mcp
 ```
 
 您也可以手動以 stdio 啟動 MCP 伺服器：
+
 ```bash
 tmd --mcp
 ```
@@ -126,25 +142,32 @@ tmd --mcp
 ### 常見協作指令範例
 
 #### 1. 小節檢查與語法自我修復
+
 ```bash
 # 讓 AI 檢查小節長度
 tmd check my_song.tmd
 ```
+
 如果發現小節拍數不符，AI 會根據報錯訊息（例如第 12 行短少 1 拍）自動補足延音線 `-` 或休止符 `0`。
 
 #### 2. 自動格式化排版
+
 ```bash
 tmd format my_song.tmd -i
 ```
+
 自動調整縮排與對齊，維持樂譜整潔。
 
 #### 3. 歌曲結構與音域剖析
+
 ```bash
 tmd inspect my_song.tmd
 ```
+
 印出終端機 ASCII 報表，檢視最高音、最低音、跨越半音數與調性吻合度。
 
 #### 4. 終端機即時試聽與快速轉檔
+
 ```bash
 # 終端機播放試聽
 tmd my_song.tmd --play
