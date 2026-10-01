@@ -61,5 +61,7 @@ nav:
   - TMD 命令列工具（CLI）: cli.md
   - TMD 歌曲分析器: inspector.md
   - 與 AI 協同寫歌: ai_agent.md
+  - 主導動機與電影感變奏: motif_variation.md
   - 與 AI 協同創作大型作品: epic_composing.md
+  - 傳統演算法音樂生成: algorithmic_music.md
   - TMD 語法規格: syntax.md
