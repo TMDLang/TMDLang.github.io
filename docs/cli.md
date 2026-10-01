@@ -5,7 +5,7 @@ TMD 提供了功能完整的命令列工具（CLI），支援在終端機中進�
 TMD CLI 目前提供兩種語言實作版本：
 
 - **TmdSwift**：macOS / Linux 原生編譯高效能版本（可透過 Homebrew 安裝）。
-- **TMD-TS**：Node.js 跨平台版本（支援 macOS、Linux 與 Windows）。
+- **tmdlang (Node.js)**：跨平台版本（支援 macOS、Linux 與 Windows，透過 npm 發行）。
 
 ---
 
@@ -19,10 +19,10 @@ brew tap --trust zonble/tmd  # 允許第三方 Tap
 brew install tmd
 ```
 
-### Node.js 環境（全域安裝 TMD-TS）
+### Node.js 環境（全域安裝 tmdlang）
 
 ```bash
-npm install -g tmd-ts
+npm install -g tmdlang
 ```
 
 安裝完成後，即可在終端機中執行 `tmd` 指令：
