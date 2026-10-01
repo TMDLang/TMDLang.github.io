@@ -60,24 +60,42 @@
 
 ---
 
-## 3. 跨平台輕量王者：REAPER（原生專案檔直通）
+## 3. Android 使用者首選：BandLab 與 FL Studio Mobile
+
+如果你使用的是 Android 手機或平板，雖然 Android 系統沒有預載類似 GarageBand 的系統內建工具，但 Google Play 上有兩款非常成熟強大的行動音樂 App，同樣能直接吃 TMD 的 MIDI 檔案：
+
+### 3.1 免費雲端首選：BandLab（Android 最像 GarageBand 的神器）
+**BandLab** 是目前 Android 上最受歡迎的免費雲端數位音樂工作站，零門檻且功能極為強大：
+1. **匯入 MIDI**：在 Android 瀏覽器下載 TMD 匯出的 `.mid` 檔案 ➔ 打開 BandLab 建立新專案 ➔ 點擊 `+` 選擇 `Import Audio/MIDI` 選取檔案。
+2. **自動分軌與豐富音色庫**：BandLab 會自動解析多軌，並內建超過 300 種虛擬樂器（鋼琴、吉他、打擊樂、管弦樂）與龐大的免費效果器。
+3. **雲端跨平台同步**：你在 Android 手機上編排好的一半半成品，回家打開電腦瀏覽器登入 BandLab 網頁版就能無縫繼續做，甚至能一鍵分享到社群給朋友合唱或加吉他。
+
+### 3.2 專業付費旗艦：FL Studio Mobile
+如果你追求更極致的離線編曲、音源採樣與混音精準度，**FL Studio Mobile** 是 Android 生態圈的工業標準：
+- **完整支援多軌 MIDI 拖曳匯入**：直接把 TMD 產出的 MIDI 檔載入音軌。
+- **強大的合成器引擎（DirectWave / GMS）**：具備高傳真音質的採樣播放器與合成器，支援載入外部 SoundFont（`.sf2`）。
+- **可回傳電腦端**：手機版的專案可以一鍵導入 Windows / Mac 上的 FL Studio 完整版進行最終發行級混音。
+
+---
+
+## 4. 跨平台輕量王者：REAPER（原生專案檔直通）
 
 如果你使用 Windows、Linux，或是追求極致輕量與客製化的 Mac 用戶，**REAPER** 是目前全球影視與遊戲配樂界最推崇的 DAW 之一。
 
-### 3.1 TMD 原生支援 REAPER 工程檔（`.rpp`）
+### 4.1 TMD 原生支援 REAPER 工程檔（`.rpp`）
 TMD 具備專門針對 REAPER 的編譯器輸出：
 ```bash
 tmd my_song.tmd -r my_song.rpp
 ```
 或在 TMD Studio 匯出選單中點選 **REAPER Project (.rpp)**。
 
-### 3.2 為什麼這個整合如此強大？
+### 4.2 為什麼這個整合如此強大？
 一般軟體匯出 MIDI 後，進 DAW 還要手動重新建立段落標記（Markers）與速度軌（Tempo Map）。但 TMD 產出的 `.rpp` 已經為你做好了所有繁瑣雜事：
 - **段落標記自動就位**：TMD 裡的 `intro`、`verse`、`chorus` 在 REAPER 時間軸上方會自動轉化為彩色的段落 Marker。
 - **速度與拍號地圖對齊**：樂譜中所有中途變更的速度 `{!=140}`、拍號變更全都自動寫進 REAPER 速度軌中。
 - **軌道命名與 MIDI 嵌入**：打開專案，你只需要做一件事——**在軌道上掛載你喜歡的音色插件（VSTi）**！
 
-### 3.3 破解 REAPER 播放 MIDI 的「無聲痛點」與一勞永逸解法
+### 4.3 破解 REAPER 播放 MIDI 的「無聲痛點」與一勞永逸解法
 許多人覺得 REAPER 處理 MIDI「很麻煩」，主要原因在於：**REAPER 追求極度精簡純粹，因此出廠預設「沒有內建 General MIDI (GM) 軟音源」**。在 GarageBand 或 Logic 裡把 MIDI 丟進去立刻有鋼琴、木吉他與爵士鼓發聲，但在未設定的 REAPER 裡打開，預設是完全靜音的。
 
 要讓 REAPER 像 GarageBand 一樣一開就響，最推薦的兩種極速配搭方式：
@@ -93,32 +111,32 @@ tmd my_song.tmd -r my_song.rpp
 
 ---
 
-## 4. 讓作品震撼靈魂的秘密：頂級虛擬樂器音色庫（VSTi / Audio Units）
+## 5. 讓作品震撼靈魂的秘密：頂級虛擬樂器音色庫（VSTi / Audio Units）
 
 在 DAW 中，替換掉預設 MIDI 音色的核心武器叫做「虛擬採樣樂器（Sample Libraries）」。以下是配樂師與製作人最常用的幾款夢幻逸品：
 
-### 4.1 管弦交響樂首選：Spitfire Audio
+### 5.1 管弦交響樂首選：Spitfire Audio
 - **BBC Symphony Orchestra (BBC SO)**：
   - **BBC SO Discover（免費版）**：只要在官網註冊填寫問卷即可免費取得！包含倫敦 BBC 交響樂團整套編制的弦樂、木管、銅管與打擊樂，檔案極小但音質高雅乾淨，新手必備。
   - **BBC SO Core / Professional**：好萊塢與 BBC 紀錄片標準採樣，包含各麥克風擺位與全套演奏法。
 - **Albion ONE**：
   - 電影預告片、動作大片與史詩配樂的工業標準，專門提供「一按鍵下去就震撼山河」的交響齊奏、重裝銅管與雷霆戰鼓。
 
-### 4.2 鋼琴與鍵盤樂器
+### 5.2 鋼琴與鍵盤樂器
 - **Native Instruments - The Giant / Alicia's Keys**：世界最大直立鋼琴的超低頻震顫，或是溫暖細膩的現代流行抒情平台鋼琴。
 - **Modartt - Pianoteq**：極致輕量的物理建模鋼琴，不需要幾十 GB 的採樣硬碟空間，泛音共鳴極度靈動。
 
-### 4.3 吉他與貝斯
+### 5.3 吉他與貝斯
 - **Ample Sound（Ample Guitar / Ample Bass）**：精準還原木吉他掃弦律動、電吉他推弦滑音與電貝斯的放克打弦（Slap）。
 - **Spectrasonics - Trilian**：全球低音貝斯的終極聖杯，包含全世界最深沉溫暖的低音大提琴與合成貝斯。
 
-### 4.4 真實鼓組與打擊樂
+### 5.4 真實鼓組與打擊樂
 - **Toontrack - Superior Drummer 3 / EZdrummer 3**：
   - 將 TMD 第 10 軌的鼓點換上世界頂級錄音室採樣的爵士鼓，包含鼓皮泛音、鼓棒敲擊邊框（Rimshot）與真實空間殘響麥克風。
 
 ---
 
-## 5. 製作人的「最後兩道工序」（The Polish）
+## 6. 製作人的「最後兩道工序」（The Polish）
 
 把 MIDI 放進 DAW、換上好音色之後，為什麼有時候聽起來還是有點像「機器人在彈昂貴的樂器」？只要完成最後這兩步，音樂就會徹底活過來：
 
