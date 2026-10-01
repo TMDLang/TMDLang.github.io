@@ -4,17 +4,15 @@ TMD 不僅是一門為人類創作者設計的樂譜標記語言，也是一個�
 
 透過官方 npm 套件 **`tmdlang`**，你可以將 TMD 的語法解析、小節長度檢查、AST 遍歷、多格式轉檔（MIDI / MusicXML / WAV / REAPER / VOCALOID）以及 MCP AI 工具無縫整合進你的 Node.js、TypeScript、Web 應用程式或自動化腳本中。
 
-
-## 1. 安裝套件
+## 安裝套件
 
 ```bash
 npm install tmdlang
 ```
 
+## 核心 API
 
-## 2. 核心 API 快速上手
-
-### 2.1 解析樂譜（AST 與元數據）
+### 解析樂譜（AST 與元數據）
 
 使用 `TmdParser` 可以將 TMD 原始字串解析為完整的抽象語法樹（`Sheet` 物件）：
 
@@ -47,7 +45,7 @@ try {
 }
 ```
 
-### 2.2 檢查小節拍數完整度
+### 檢查小節拍數完整度
 
 使用 `TMDMeasureChecker` 可以在不需要執行編譯的情況下，對樂譜進行靜態拍數校驗：
 
@@ -71,7 +69,7 @@ if (issues.length > 0) {
 }
 ```
 
-### 2.3 生成 Standard MIDI 二進位檔案（Uint8Array）
+### 生成 Standard MIDI 二進位檔案（Uint8Array）
 
 使用 `TMDMIDIGenerator` 可以將 AST 轉換為標準 MIDI 格式的 `Uint8Array`，方便直接存檔或傳送給音訊引擎：
 
@@ -89,8 +87,7 @@ fs.writeFileSync('output.mid', Buffer.from(midiBytes));
 console.log('成功生成 output.mid');
 ```
 
-
-## 3. 多格式生成器（Exporters）
+## 多格式生成器（Exporters）
 
 `tmdlang` 內建豐富的匯出轉換器，可以直接將 AST 轉譯為各種主流音樂格式：
 
@@ -126,12 +123,11 @@ const chordProLeadSheet = TMDChordProGenerator.generateChordPro(sheet);
 const wavBytes: Uint8Array = TMDWAVRenderer.renderWAV(sheet);
 ```
 
-
-## 4. Model Context Protocol (MCP) 伺服器
+## Model Context Protocol (MCP) 伺服器
 
 `tmdlang` 原生實作了標準的 MCP 協定，可以讓任何支援 MCP 的 AI Agent（如 Claude Desktop、Cursor、Windsurf、Gemini CLI）直接獲得音樂編譯、語法校驗與格式轉換能力。
 
-### 4.1 一鍵自動註冊
+### 一鍵自動註冊
 
 在命令列執行：
 
@@ -141,7 +137,7 @@ npx tmdlang --install-mcp
 
 指令會自動偵測系統中的 Claude Desktop、Cursor 與 Gemini 設定檔，並寫入啟動配置。
 
-### 4.2 手動設定範例（Claude Desktop / Cursor）
+### 手動設定範例（Claude Desktop / Cursor）
 
 在你的 `claude_desktop_config.json` 或 Cursor `mcp.json` 中加入：
 
@@ -156,7 +152,7 @@ npx tmdlang --install-mcp
 }
 ```
 
-### 4.3 提供之 MCP Tools
+### 提供之 MCP Tools
 
 當 MCP 伺服器掛載成功後，AI Agent 可以呼叫以下 4 個工具：
 
@@ -167,8 +163,7 @@ npx tmdlang --install-mcp
 | `check_tmd` | 校驗小節拍數、節奏完整度與播放流程，回報具體錯誤小節 | `text` 或 `filePath` |
 | `convert_tmd` | 將樂譜轉換為指定目標格式（`midi`, `musicxml`, `wav`, `reaper` 等） | `text`, `format`, `outputPath` |
 
-
-## 5. 語言伺服器協定（LSP）支援
+## 語言伺服器協定（LSP）支援
 
 如果你想在自訂的編輯器（如 Neovim、Sublime Text、Emacs）中獲得 TMD 語法診斷與補全：
 
