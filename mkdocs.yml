@@ -68,6 +68,8 @@ nav:
     - 後期製作: production_workflow.md
     - 演算法生成音樂: algorithmic_music.md
     - 更多奇思妙想: creative_experiments.md
+  - "範例":
+    - "專案主題曲 — Legacy": example_legacy.md
   - 歌曲分析器: inspector.md
   - 語法規格: syntax.md
   - 常見問答: faq.md

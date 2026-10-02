@@ -1,22 +1,13 @@
 # CLI 工具
 
-TMD 提供了功能完整的命令列工具（CLI），支援在終端機中進行樂譜解析、小節校驗、多種音樂格式匯出、音訊即時預覽、樂譜重構，以及 AI Agent 技能與 MCP 伺服器的整合。
+TMD 命令列工具（CLI）支援在終端機中進行樂譜解析、小節校驗、多種音樂格式匯出、音訊即時預覽、樂譜重構，以及 AI Agent 技能與 MCP 伺服器的整合。
 
 TMD CLI 目前提供兩種語言實作版本：
 
-- **TmdSwift**：macOS / Linux 原生編譯高效能版本（可透過 Homebrew 安裝）。
 - **tmdlang (Node.js)**：跨平台版本（支援 macOS、Linux 與 Windows，透過 npm 發行）。
-
+- **TmdSwift**：macOS / Linux 原生編譯高效能版本（可透過 Homebrew 安裝）。
 
 ## 安裝方式
-
-### macOS / Linux（推薦透過 Homebrew 安裝 TmdSwift）
-
-```bash
-brew tap zonble/tmd
-brew tap --trust zonble/tmd  # 允許第三方 Tap
-brew install tmd
-```
 
 ### Node.js 環境（全域安裝 tmdlang）
 
@@ -28,6 +19,14 @@ npm install -g tmdlang
 
 ```bash
 tmd --help
+```
+
+### macOS / Linux（推薦透過 Homebrew 安裝 TmdSwift）
+
+```bash
+brew tap tmdlang/tmd
+brew tap --trust tmdlang/tmd  # 允許第三方 Tap
+brew install tmd
 ```
 
 ## 核心功能與基本指令
@@ -48,7 +47,8 @@ tmd score.tmd -p
 tmd check score.tmd
 ```
 
-> **提示**：在匯出 MIDI 或其他格式時，TMD 預設會先執行小節檢查。若要忽略檢查強制匯出，可加上 `-f, --force` 參數。
+!!! tip "提示"
+    在匯出 MIDI 或其他格式時，TMD 預設會先執行小節檢查。若要忽略檢查強制匯出，可加上 `-f, --force` 參數。
 
 ### 樂譜自動排版（`format`）
 
@@ -61,7 +61,6 @@ tmd format score.tmd
 # 直接就地更新覆寫原檔案（In-place）
 tmd format score.tmd -i
 ```
-
 
 ## 音樂格式匯出與音訊渲染
 
@@ -95,7 +94,6 @@ tmd score.tmd --play --section chorus --instrument Piano
 tmd score.tmd --play --soundfont FluidR3_GM.sf2
 ```
 
-
 ## 歌曲分析與剖析（`inspect`）
 
 `tmd inspect` 提供類似效能分析器（Profiler）的音樂特徵診斷：
@@ -114,7 +112,6 @@ tmd inspect score.tmd
   ```bash
   tmd inspect score.tmd --json
   ```
-
 
 ## 樂譜重構工具（`refactor`）
 
@@ -144,7 +141,6 @@ tmd refactor extract-instrument score.tmd Vocal -o lead.tmd
 ```bash
 tmd refactor inline-orders score.tmd -o linear.tmd
 ```
-
 
 ## AI Agent 與本機工作流整合
 

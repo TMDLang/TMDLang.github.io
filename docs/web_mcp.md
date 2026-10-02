@@ -1,12 +1,8 @@
 # Web MCP 設定
 
-Model Context Protocol（MCP）是由 Anthropic 發起的開放標準協議，允許 AI 代理程式掛載專屬工具。
+Model Context Protocol（MCP）是由 Anthropic 發起的開放標準協議，允許 AI 代理程式掛載專屬工具。Web MCP 則可以使用者利用機現有的 AI 工具（如 Google Antigravity、Claude Desktop、Cursor、Windsurf 或 Claude Code 等）直接遠端操作瀏覽器中的網頁服務。
 
-除了命令列本機的 stdio MCP 外，**TMD Studio 網頁版**（[https://tmdlang.github.io/Tmd-TS/](https://tmdlang.github.io/Tmd-TS/)）原生內建了 **Web MCP** 服務。
-
-Web MCP 的核心設計方向是：**讓創作者使用本機現有的 AI 工具（如 Google Antigravity、Claude Desktop、Cursor、Windsurf 或 Claude Code 等）直接遠端操作瀏覽器裡的 TMD Studio。**
-
----
+[**TMD Studio 網頁版**](https://tmdlang.github.io/Tmd-TS/) 包含了 Web MCP 工具，您可以透過 Web MCP，讓本機 AI 工具，編寫 TMD Studio 中編輯區的樂譜。
 
 ## 為什麼使用 Web MCP？（免在網頁中輸入 API Key）
 
@@ -18,8 +14,6 @@ Web MCP 的核心設計方向是：**讓創作者使用本機現有的 AI 工具
 2. **使用更強大的本地 Agent 生態**：您可以直接享有本機 AI 助手擁有的完整能力（例如自訂 System Prompts、Skills、專案上下文、長思考模型等）。
 3. **雙向操作網頁編輯器**：本機 AI 工具能直接「看見」目前網頁編輯器裡的樂譜（`getCurrentScore`），並在完成修改後「直接寫回」編輯區並觸發播放（`loadScoreToEditor`）。
 4. **即時試聽反饋**：寫入後立即調用瀏覽器 Web Audio 播放試聽，讓 AI 生成與聽感確認形成無縫閉環。
-
----
 
 ## Web MCP 開放之工具清單
 
@@ -34,11 +28,9 @@ TMD Studio 在瀏覽器端註冊了以下 6 項標準工具：
 | `getCurrentScore` | 取得目前 TMD Studio 編輯器中開啟的樂譜內容 | 無 | 編輯器中的完整 TMD 純文字 |
 | `loadScoreToEditor` | 將樂譜文字推入 TMD Studio 編輯器中，並可選擇是否立即播放 | `text` (樂譜字串), `play` (布林值，可選) | 載入成功訊息 |
 
----
-
 ## 連線方式與操作步驟
 
-TMD Studio 的 Web MCP 採用開源的 [WebMCP (https://webmcp.dev/)](https://webmcp.dev/) 規範。您不需要另外安裝瀏覽器插件，只需在本機的 MCP 設定中加入 WebMCP Server，即可透過 Token 與網頁端配對連線。
+TMD Studio 的 Web MCP 採用開源的 [WebMCP](https://webmcp.dev/) 規範。您不需要另外安裝瀏覽器插件，只需在本機的 MCP 設定中加入 WebMCP Server，即可透過 Token 與網頁端配對連線。
 
 > [!IMPORTANT]
 > **本機環境需求**：由於 WebMCP 伺服器是透過 `npx` 執行，**您的本機電腦必須先安裝 [Node.js](https://nodejs.org/)（建議 LTS 版本，內建 npm 與 npx 指令）**。若尚未安裝，可至 Node.js 官方網站下載安裝，或在 macOS 上透過 `brew install node` 安裝。
@@ -64,13 +56,15 @@ TMD Studio 的 Web MCP 採用開源的 [WebMCP (https://webmcp.dev/)](https://we
 }
 ```
 
-> **提示**：儲存設定後請重新啟動您的本地 AI 工具（如重啟 Claude Desktop 或重新載入 Agent session）。
+!!! tip "提示"
+    儲存設定後請重新啟動您的本地 AI 工具（如重啟 Claude Desktop 或重新載入 Agent session）。
 
 ### 步驟 2：向本機 AI 索取連線 Token
 
 啟動您的本機 AI 助手（例如在 Antigravity 或 Claude Desktop 對話中），直接輸入：
 
-> 「請幫我產生一個 WebMCP token（make a webmcp token）」
+!!! example "範例"
+    「請幫我產生一個 WebMCP token（make a webmcp token）」
 
 AI 代理程式便會呼叫 WebMCP 伺服器並回傳一串連線 Token。
 
@@ -83,9 +77,9 @@ AI 代理程式便會呼叫 WebMCP 伺服器並回傳一串連線 Token。
 
 連線建立後，Widget 狀態指示燈將轉為綠色。此時本機 AI 工具便可直接呼叫上述 6 個工具，隨心所欲地控制網頁編輯區！
 
-> [!TIP]
-> - 連線在閒置 5 分鐘後會自動斷開以保護資源，點擊 Connect 即可重新連接。
-> - 若連線成功後客戶端尚未列出新工具，可重啟一次本地客戶端讓工具清單即時刷新。
+!!! tip
+    - 連線在閒置 5 分鐘後會自動斷開以保護資源，點擊 Connect 即可重新連接。
+    - 若連線成功後客戶端尚未列出新工具，可重啟一次本地客戶端讓工具清單即時刷新。
 
 ## 本機 stdio MCP 與 Web MCP 的定位比較
 
@@ -104,9 +98,8 @@ TMD 提供了兩種 MCP 運作型態，您可以依照工作情境自由選擇�
 
 當 AI Agent 連上 TMD Studio 的 Web MCP 後，典型的對話流程如下：
 
-```
-人類：「請幫我看看目前編輯器裡的歌，幫我檢查有沒有拍數錯誤，然後把和弦換成爵士風格並試聽。」
-```
+!!! example "範例"
+    人類：「請幫我看看目前編輯器裡的歌，幫我檢查有沒有拍數錯誤，然後把和弦換成爵士風格並試聽。」
 
 AI Agent 在背後的運作：
 
