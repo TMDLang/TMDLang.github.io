@@ -1,9 +1,10 @@
 # VS Code 套件
 
-TMD 官方為 **Visual Studio Code**（以及 Cursor、VSCodium 等相容編輯器）提供了專屬擴充套件，將專業音樂工作站的各項功能直接搬進程式碼編輯器中，讓音樂創作享有與寫程式一樣流暢的體驗。
+TMD 官方為 [**Visual Studio Code**](https://code.visualstudio.com/)（以及 Cursor、VSCodium 等相容編輯器）提供了專屬擴充套件，將專業音樂工作站的各項功能直接搬進程式碼編輯器中，讓音樂創作享有與寫程式一樣流暢的體驗。
 
+![VS Code 擴充套件介面](img_zh/vscode_extension.png)
 
-## 1. 安裝與設定
+## 安裝與設定
 
 ### 方式 A：從市集安裝
 
@@ -30,8 +31,7 @@ TMD 官方為 **Visual Studio Code**（以及 Cursor、VSCodium 等相容編輯�
 
 擴充套件的進階匯出與分析功能會自動偵測本機的 `tmd` 執行檔（預設搜尋 `/usr/local/bin/tmd`、`/opt/homebrew/bin/tmd`、`~/.local/bin/tmd` 或系統 `PATH`）。如果使用自訂路徑，可在 VS Code 設定搜尋 `tmd.executablePath` 進行指定。
 
-
-## 2. 語法高亮與智慧程式碼片段（Snippets）
+## 語法高亮與智慧程式碼片段（Snippets）
 
 打開任何 `.tmd` 檔案，擴充套件會提供專屬的語法突顯與結構摺疊：
 
@@ -49,27 +49,25 @@ TMD 官方為 **Visual Studio Code**（以及 Cursor、VSCodium 等相容編輯�
     - 輸入 `tup` ➔ 插入三連音等節奏群組（`%(---)`）。
     - 輸入 `ch` ➔ 快速插入和弦語法（`[...]`）。
 
-
-## 3. 即時小節檢查與診斷（Live Diagnostics）
+## 即時小節檢查與診斷（Live Diagnostics）
 
 VS Code 延伸模組內建了即時節奏編譯器，在您輸入或儲存檔案時自動檢查小節拍數：
 
 - **紅色波浪線提示**：若某個小節的拍數多出或短少（例如 `<4/4>` 拍號下只寫了 3 拍），編輯器會立即在該小節下方繪製警告波浪線。
 - **問題面板整合（Problems View）**：在 VS Code 底部的 **Problems（問題）** 面板中，會條列出所有出錯的段落名稱、小節序號、預期拍數與實際拍數差距，點擊即可跳轉至出錯行。
 
-
-## 4. 側邊欄專屬工作區（TMD Studio 活動列）
+## 側邊欄專屬工作區（TMD Studio 活動列）
 
 點擊 VS Code 左側活動列的 **TMD 圖示**，即可展開專屬的側邊欄面板：
 
-### 1. 大綱與段落導覽（TMD Outline）
+### 大綱與段落導覽（TMD Outline）
 
 自動解析目前樂譜中的所有段落（`intro`、`verse`、`chorus` 等）與各軌道樂器清單。
 
 - 點擊段落直接跳轉至對應程式碼位置。
 - 提供直覺的快捷按鈕，可直接單獨播放選定段落或軌道。
 
-### 2. 歌曲分析器（Song Inspector）
+### 歌曲分析器（Song Inspector）
 
 內建視覺化 Webview 儀表板，即時呈現：
 
@@ -77,16 +75,15 @@ VS Code 延伸模組內建了即時節奏編譯器，在您輸入或儲存檔案
 - **調性推論與五度圈軌跡**：利用 K-S 演算法分析調性吻合度與離調轉調走向。
 - **編曲密度統計**：全曲總小節數、演奏時間與同時發聲的音符密度分布。
 
-### 3. 虛擬鋼琴鍵盤（Virtual Keyboard）
+### 虛擬鋼琴鍵盤（Virtual Keyboard）
 
 提供可點擊試聽的互動式鋼琴鍵盤，可將音符直接插入至編輯器游標所在位置。
 
-### 4. 哼唱轉譜（Hum to TMD）
+### 哼唱轉譜（Hum to TMD）
 
 透過側邊面板啟動麥克風錄音，利用 Basic Pitch 演算法進行即時人聲哼唱辨識，自動轉換為簡譜段落並填入編輯區。
 
-
-## 5. 互動式播放器與多格式匯出
+## 互動式播放器與多格式匯出
 
 在編輯器右上角按鈕、右鍵選單或按 `Cmd+Shift+P` 叫出命令面板（輸入 `TMD:`）即可使用豐富的功能：
 
@@ -105,8 +102,7 @@ VS Code 延伸模組內建了即時節奏編譯器，在您輸入或儲存檔案
 - **渲染為 WAV 音訊** (`.wav`)。
 - **虛擬歌手格式**：匯出為 VOCALOID (`.vsq`, `.vsqx`) 或 UTAU (`.ust`) 專案檔。
 
-
-## 6. 編曲重構工具（Refactoring）
+## 重新編排工具
 
 選取樂譜片段或直接在文件中點擊右鍵，可使用一系列快速重構指令：
 
@@ -119,8 +115,7 @@ VS Code 延伸模組內建了即時節奏編譯器，在您輸入或儲存檔案
 - **軌道操作**：複製軌道、自動生成平行三度／六度合音軌道、抽出單一樂器。
 - **展開演奏順序（Inline Orders）**：將包含反覆與轉調的流程展開為單一線性樂譜。
 
-
-## 7. GitHub Copilot 與 AI Chat 深度整合
+## GitHub Copilot 與 AI Chat 整合
 
 TMD VS Code 擴充套件原生支援 GitHub Copilot Chat 與語言模型工具（Language Model Tools）：
 
