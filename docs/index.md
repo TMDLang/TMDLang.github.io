@@ -89,6 +89,7 @@ ABC notation 雖然語法較簡單，但一開始是為了紀錄固定音高的�
 - **[CLI 工具](cli.md)**：命令列樂譜解析、小節長度校驗、音訊預覽、轉檔與 AI Agent/MCP 整合。
 - **[歌曲分析](inspector.md)**：歌手音域（Vocal Tessitura）、K-S 調性認知演算法與五度圈分析。
 - **[AI 協同寫歌](ai_agent.md)**：五大人機協同模式、即時試聽除錯閉環與實用提示詞模板。
+- **[Web MCP 設定](web_mcp.md)**：瀏覽器端 Model Context Protocol 服務、雙向編輯器同步與即時試聽整合。
 - **[動機與變奏](motif_variation.md)**：電影感主導動機（Leitmotif）與四種場景氛圍變奏。
 - **[創作大型作品](epic_composing.md)**：「分而治之」工作流，從場景腳本、動機發展到全曲拼裝。
 - **[後期製作](production_workflow.md)**：串接 MuseScore、GarageBand、Logic Pro、REAPER 與頂級虛擬音色庫。
