@@ -56,7 +56,7 @@ ABC notation 雖然語法較簡單，但一開始是為了紀錄固定音高的�
 
 ## TMD 與音樂 Live Coding 的差異
 
-近年來以程式碼即時演奏的 Live Coding（如 Sonic Pi、TidalCycles、Strudel、FoxDot 等）在電腦音樂圈也相當活躍。同樣是「用文字寫音樂」，TMD 與 Live Coding 在**核心哲學、語法抽象層次與使用情境**上有著截然不同的定位：
+近年來以程式碼即時演奏的 Live Coding（如 Sonic Pi、TidalCycles、Strudel、FoxDot 等）在電腦音樂圈也相當活躍。同樣是「用文字寫音樂」，TMD 與 Live Coding 在**核心哲學、語法抽象層次與使用情境**上有著截然不同的定位，Live Coding 是直接使用可運算、執行程式語言播放音樂，而 TMD 仍然守在音樂的 DSL 的範圍中：
 
 | 比較維度 | TMD (Timebased Markdown) | 音樂 Live Coding (Sonic Pi / TidalCycles 等) |
 | :--- | :--- | :--- |
