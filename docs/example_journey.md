@@ -2,7 +2,8 @@
 
 這個範例中，示範如何讓 AI 發展各種不同的變奏。
 
-[在 TMD Studio 中開啟](https://tmdlang.github.io/Tmd-TS/?gist=a56171ea7772ba80190f200880b766a5)
+- [在 TMD Studio 中開啟](https://tmdlang.github.io/Tmd-TS/?gist=a56171ea7772ba80190f200880b766a5)
+- [在 Gist 中查看](https://gist.github.com/a56171ea7772ba80190f200880b766a5)
 
 所使用的 prompt 是：
 
@@ -27,3 +28,5 @@
 每一個變奏之間要加上過場
 
 ```
+
+在這個流程中，人類掌握了核心旋律與劇情腳本，AI 只是幫助人類展開意圖的苦工，整體作品的創作主導權仍然掌握在人類手中。

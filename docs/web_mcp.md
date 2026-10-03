@@ -103,8 +103,9 @@ TMD 提供了兩種 MCP 運作型態，您可以依照工作情境自由選擇�
 
 AI Agent 在背後的運作：
 
-1. 呼叫 `getCurrentScore()` 讀取網頁目前內容。
-2. 呼叫 `checkTmd({ text })` 檢驗現有小節拍數。
-3. 根據音樂理論修改 `CHORD` 軌道，換上副屬和弦與九和弦（如 `[Cmaj9]`、`[Am7]`、`[2m7-5]`）。
-4. 再次呼叫 `checkTmd({ text: newText })` 確認修改後的拍數完全吻合。
-5. 呼叫 `loadScoreToEditor({ text: newText, play: true })` 將新譜即時寫入網頁並自動開起試聽！
+1. 呼叫 `getTmdSkill()`，讓 AI Agent 獲取操作 TMD 的技能。
+2. 呼叫 `getCurrentScore()` 讀取網頁目前內容。
+3. 呼叫 `checkTmd({ text })` 檢驗現有小節拍數。
+4. 根據音樂理論修改 `CHORD` 軌道，換上副屬和弦與九和弦（如 `[Cmaj9]`、`[Am7]`、`[2m7-5]`）。
+5. 再次呼叫 `checkTmd({ text: newText })` 確認修改後的拍數完全吻合。
+6. 呼叫 `loadScoreToEditor({ text: newText, play: true })` 將新譜即時寫入網頁並自動開起試聽！

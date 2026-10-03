@@ -4,7 +4,8 @@
 
 在重啟 TMD 專案時，目前的維護者就在寫這首歌，《Legacy》也成為第一首以現在的 TMD 工具所寫出的歌曲。
 
-[在 TMD Studio 中開啟](https://tmdlang.github.io/Tmd-TS/?gist=8e3ea15434da2fc4ea758908d806fe2f)
+- [在 TMD Studio 中開啟](https://tmdlang.github.io/Tmd-TS/?gist=8e3ea15434da2fc4ea758908d806fe2f)
+- [在 Gist 中查看](https://gist.github.com/8e3ea15434da2fc4ea758908d806fe2f)
 
 ```text
 [verse 1]
