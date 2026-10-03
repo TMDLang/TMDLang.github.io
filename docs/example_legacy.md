@@ -2,6 +2,10 @@
 
 一套用來寫歌的工具，總要有一套自己的主題曲。阿怪在最早的 TMD 專案中，以他自己的《三天三夜》為範例，不過，在考量之下，目前 TMD 專案的主題曲是另外一首創作曲—《Legacy》。
 
+<audio src="legacy.m4a" controls>
+Your browser does not support the audio element.
+</audio>
+
 在重啟 TMD 專案時，目前的維護者就在寫這首歌，《Legacy》也成為第一首以現在的 TMD 工具所寫出的歌曲。
 
 - [在 TMD Studio 中開啟](https://tmdlang.github.io/Tmd-TS/?gist=8e3ea15434da2fc4ea758908d806fe2f)
@@ -31,7 +35,7 @@
 我居然，從來沒想過
 物理法則，對誰都適用
 
-我不過是肉體凡軀
+我不過是肉身凡軀
 有什麼能被我左右？
 我還是，忍不住可惜
 不只是我，會淹沒在遺忘的洪流

@@ -2,6 +2,10 @@
 
 這個範例中，示範如何讓 AI 發展各種不同的變奏。
 
+<audio src="journey.mp3" controls>
+Your browser does not support the audio element.
+</audio>
+
 - [在 TMD Studio 中開啟](https://tmdlang.github.io/Tmd-TS/?gist=a56171ea7772ba80190f200880b766a5)
 - [在 Gist 中查看](https://gist.github.com/a56171ea7772ba80190f200880b766a5)
 
@@ -11,9 +15,9 @@
 
 這是一段代表勇者的主題
 
-    1 - 1 5_ 1 5_ 1 2_ | 3 - 1 - 5 - - - |
-    2 - 2 1_ 2 1_ 6_ 2_ | 3 2 1 2 3 - - - |
-    1 - 1 5_ 1 5_ 1 2_ | 3 - 1 - 3 - 5 - |
+    1 - 1 5_ 1 5_ 1 2 | 3 - 1 - 5 - - - |
+    2 - 2 1_ 2 1_ 6_ 2 | 3 2 1 2 3 - - - |
+    1 - 1 5_ 1 5_ 1 2 | 3 - 1 - 3 - 5 - |
     2 3 2 1 3 - 2 - | 1 - - - 0 0 0 0 |
 
 請使用這個主題，發展出在 RPG 遊戲中的各種變奏

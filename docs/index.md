@@ -22,7 +22,7 @@ Suno、Udio、Google Flow Music…等用文字 prompt 直接產生音樂的 AI �
 
 其實文字型的 AI，無論是 Gemini、ChatGPT、Claude 等，其實都有撰寫旋律、和弦的的能力，只要能夠將您的旋律變成文字 prompt，各種AI 模型就能夠和您一起完成一份樂譜。在 TMD 的編輯環境中，您可以手動或哼唱輸入一段旋律、轉換成 TMD 語法，即時試聽，然後轉換成 MIDI 或樂譜。
 
-TMD 最早的創作者是寫出《三天三夜》的音樂人陳志翰（阿怪），在 2016 年時為了自己記譜所做的語法（[原始專案](https://github.com/aguai/TMDLang)）。TMD 意指 Timebased Markdown 或 Textual Music Description。在阿怪來不及看到的 AI 時代中，TMD 突然有了不同的意義—人與 AI 間的理想音樂協作語言。
+TMD 最早的創作者是寫出《三天三夜》的音樂人[陳志翰](https://zh.wikipedia.org/wiki/%E9%99%B3%E5%BF%97%E7%BF%B0)（阿怪），在 2016 年時為了自己記譜所做的語法（[原始專案](https://github.com/aguai/TMDLang)）。TMD 意指 Timebased Markdown 或 Textual Music Description。在阿怪來不及看到的 AI 時代中，TMD 突然有了不同的意義—人與 AI 間的理想音樂協作語言。
 
 ## 人類與 AI 的協作
 
@@ -54,17 +54,17 @@ ABC notation 雖然語法較簡單，但一開始是為了紀錄固定音高的�
 
 在 TMD 中，一首樂譜可以被切成多個段落，當某個段落中沒使用某種樂器時，可以完全不用寫，讓 AI 專心在真正需要注意的地方。
 
-## TMD 與音樂 Live Coding 的差異
+## 與音樂 Live Coding 的差異
 
-近年來以程式碼即時演奏的 Live Coding（如 Sonic Pi、TidalCycles、Strudel、FoxDot 等）在電腦音樂圈也相當活躍。同樣是「用文字寫音樂」，TMD 與 Live Coding 在**核心哲學、語法抽象層次與使用情境**上有著截然不同的定位，Live Coding 是直接使用可運算、執行程式語言播放音樂，而 TMD 仍然守在音樂的 DSL 的範圍中：
+近年來以程式碼即時演奏的 Live Coding（如 Sonic Pi、TidalCycles、Strudel、FoxDot 等）在電腦音樂圈也相當活躍。同樣是「用文字寫音樂」，TMD 與 Live Coding 在核心哲學、語法抽象層次與使用情境，都有著不同定位：Live Coding 是直接使用可運算、執行程式語言播放音樂，而 TMD 仍然守在音樂的 DSL 的範圍中：
 
 | 比較維度 | TMD (Timebased Markdown) | 音樂 Live Coding (Sonic Pi / TidalCycles 等) |
 | :--- | :--- | :--- |
-| **核心定位** | **記譜與作曲筆記**（Score & Notation） | **即時演出與音訊合成**（Performance & Synthesis） |
+| **核心定位** | **記譜與作曲筆記** | **即時演出與音訊合成** |
 | **思維模型** | 宣告式結構（Declarative）：段落、小節、音符、和弦進程 | 演算法與程序式（Procedural）：Pattern 運算、音訊 DSP、合成器參數與迴圈 |
 | **音高系統** | 簡譜相對音高（首調思維），專注於旋律記憶與調性轉移 | 絕對音高（MIDI 數值 / 音名）或頻率控制，強調音色調變 |
-| **人機協同** | 專為 **人 ↔ AI 語言模型** 互動優化（極致節省 Token、低語法噪音） | 專為 **人 ↔ 音訊引擎** 的現場即興演奏設計 |
-| **產出結果** | 結構化樂譜、MIDI、MusicXML、簡譜，供後續編曲或打譜使用 | 即時音訊流（Audio Stream）、即興聲響展演 |
+| **人機協同** | 對 **人 與 AI 語言模型** 的互動友善 | 為 **人與音訊引擎** 的現場即興演奏設計 |
+| **產出結果** | 結構化樂譜、MIDI、MusicXML、簡譜，供後續編曲或打譜使用 | 即時音訊串流（Audio Stream）、即興聲響展演 |
 
 - **Live Coding 關注「聲音的產生與即時變換」**：它本質上是可程式化的合成器與取樣機，適合現場即興、電子音樂表演與演算法聲響實驗。
 - **TMD 關注「旋律與結構的精確記錄」**：它是一套極度輕量的「音樂 Markdown」，旨在以最低的心智負擔把腦海中的動機、旋律與段落記下，並讓 AI 能夠無縫理解、補全與修訂，最後再交由 DAW 或製譜軟體做進一步的製作。
