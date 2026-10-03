@@ -38,3 +38,5 @@ Your browser does not support the audio element.
 民眾作後援 自己當前面
 轟轟烈烈幹一番 端的不負男兒願 
 ```
+取自 Wikipeida 上的 [《小學活頁歌曲選》](https://upload.wikimedia.org/wikipedia/commons/0/02/NLC416-14jh008990-81604_%E5%B0%8F%E5%AD%B8%E6%B4%BB%E9%A0%81%E6%AD%8C%E6%9B%B2%E9%81%B8.pdf)，民國 28 年時由陳恭則、陳宗秀合編，豐子愷、錢君匋校對。萬葉書局刊行。
+
