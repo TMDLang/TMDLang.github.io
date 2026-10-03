@@ -71,6 +71,7 @@ nav:
     - 演算法生成音樂: algorithmic_music.md
     - 更多奇思妙想: creative_experiments.md
   - "範例":
+    - "勇者之旅": example_journey.md
     - "專案主題曲 — Legacy": example_legacy.md
   - 歌曲分析器: inspector.md
   - 語法規格: syntax.md
