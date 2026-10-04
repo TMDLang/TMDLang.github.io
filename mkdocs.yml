@@ -73,8 +73,9 @@ nav:
     - 更多奇思妙想: creative_experiments.md
   - "範例":
     - "遊戲音樂—勇者之旅": example_journey.md
-    - "為失傳的歌曲重新譜曲": example_new_first_army.md
     - "二部合唱": example_choir.md
+    - "兒歌—點蟲蟲": example_children_song.md
+    - "為失傳的歌曲重新譜曲": example_new_first_army.md
     - "專案主題曲 — Legacy": example_legacy.md
     - "交響詩": example_symphony.md
   - 歌曲分析器: inspector.md
