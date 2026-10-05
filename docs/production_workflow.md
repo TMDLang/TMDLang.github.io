@@ -1,12 +1,12 @@
 # 後期製作
 
-在 TMD Studio 或命令列中編寫樂譜時，內建合成器播放的聲音主要用於確認音高、拍數與結構是否正確。
+在 TMD Studio 或命令列編寫樂譜時，內建合成器主要用來確認音高、拍數與結構。
 
-如果需要進一步進行五線譜排版、更換音色、混音或細修表情控制器，可以將 TMD 匯出的檔案整合至常見的製譜軟體與數位音訊工作站（DAW）。
+若要進行五線譜排版、更換音色、混音或細修表情控制器，可將 TMD 匯出檔整合至製譜軟體與數位音訊工作站（DAW）。
 
 ## 1. 五線譜排版：MuseScore
 
-如果需要產生供樂手排練、合唱團或樂團閱讀的標準五線總譜與分譜，可以使用開源排版軟體 **MuseScore**。
+若要產生供樂手、合唱團或樂團閱讀的五線總譜與分譜，可使用開源排版軟體 **MuseScore**。
 
 ![MuseScore](img_zh/musescore.png)
 
@@ -19,11 +19,11 @@
    ```
 
 2. 開啟 MuseScore 4，載入該 `.musicxml` 檔案。
-3. MuseScore 會解析 TMD 中的軌道配置、拍號、小節線、速度標記、動態強弱（如 `{p}`, `{f}`）與和弦代號，並自動完成五線譜排版。
+3. MuseScore 會解析 TMD 的軌道配置、拍號、小節線、速度、動態強弱（如 `{p}`, `{f}`）與和弦代號，自動完成五線譜排版。
 
 ### Muse Sounds 音色庫
 
-MuseScore 4 支援透過 Muse Hub 下載管弦樂與合唱音色庫 **Muse Sounds**（包含弦樂、木管、銅管、打擊樂與合唱），可直接在排版介面中回放更自然的樂器發聲與連奏細節。
+MuseScore 4 支援透過 Muse Hub 下載管弦樂與合唱音色庫 **Muse Sounds**（含弦樂、木管、銅管、打擊樂與合唱），可在排版介面回放更自然的樂器聲音與連奏。
 
 ---
 
@@ -31,11 +31,11 @@ MuseScore 4 支援透過 Muse Hub 下載管弦樂與合唱音色庫 **Muse Sound
 
 ![GarageBand](img_zh/garage_band.png)
 
-macOS 與 iOS/iPadOS 內建或支援的音訊工具可直接讀取 TMD 產出的標準 MIDI 檔案。
+macOS 與 iOS/iPadOS 的音訊工具可直接讀取 TMD 產出的標準 MIDI 檔案。
 
 ### iOS / iPadOS：GarageBand
 
-在行動裝置上使用 TMD Studio 匯出 MIDI 後，可匯入行動版 GarageBand：
+在行動裝置使用 TMD Studio 匯出 MIDI 後，可匯入行動版 GarageBand：
 
 1. **下載檔案**：在行動瀏覽器中點選 `Export` ➔ **MIDI (.mid)**，將檔案存至系統「檔案」App。
 2. **匯入專案**：
@@ -58,7 +58,7 @@ macOS 與 iOS/iPadOS 內建或支援的音訊工具可直接讀取 TMD 產出的
 
 ## 3. Android 平台：BandLab 與 FL Studio Mobile
 
-Android 裝置同樣可透過支援 MIDI 匯入的音樂製作 App 處理 TMD 產出的檔案：
+Android 裝置也可透過支援 MIDI 匯入的音樂製作 App 處理 TMD 檔案：
 
 ### BandLab
 
@@ -84,11 +84,11 @@ FL Studio Mobile 支援多軌離線製作：
 
 ## 4. 數位音訊工作站：REAPER
 
-REAPER 是一套跨平台的數位音訊工作站，適合處理複雜的多軌 MIDI 與外接 VST 外掛程式。
+REAPER 是跨平台數位音訊工作站，適合處理多軌 MIDI 與 VST 外掛。
 
 ### TMD 原生匯出 REAPER 工程檔（`.rpp`）
 
-TMD 支援直接產生 REAPER 工程檔案：
+TMD 支援直接產生 REAPER 工程檔：
 
 ```bash
 tmd my_song.tmd -r my_song.rpp
@@ -98,7 +98,7 @@ tmd my_song.tmd -r my_song.rpp
 
 ### 專案檔整合特性
 
-相較於單純匯出通用 MIDI，TMD 產生的 `.rpp` 包含以下結構設定：
+相較於單純匯出通用 MIDI，TMD 產生的 `.rpp` 包含以下設定：
 
 - **段落標記（Markers）**：TMD 中的段落名稱（如 `intro`、`verse`、`chorus`）會自動對應至 REAPER 時間軸上的標記。
 - **速度軌（Tempo Map）**：樂譜中宣告的速度變更（`{!=...}`）與拍號會自動寫入 REAPER 速度軌。
@@ -119,7 +119,7 @@ REAPER 預設未內建通用 MIDI（General MIDI）軟體音源，因此未掛�
 
 ## 5. 常見虛擬樂器音色庫（VSTi / Audio Units）
 
-在 DAW 中製作管弦樂或樂隊伴奏時，可依曲風替換為專業採樣音色庫：
+在 DAW 中製作管弦樂或樂隊伴奏時，可依曲風替換採樣音色庫：
 
 ### 管弦樂與合奏
 
@@ -142,7 +142,7 @@ REAPER 預設未內建通用 MIDI（General MIDI）軟體音源，因此未掛�
 
 ## 6. 表情控制器與空間處理
 
-將 MIDI 匯入 DAW 後，可透過以下方式調整音符動態與空間分佈：
+將 MIDI 匯入 DAW 後，可透過以下方式調整音符動態與空間分布：
 
 ### 表情控制器（MIDI CC Automation）
 

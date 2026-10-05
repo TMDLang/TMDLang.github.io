@@ -1,6 +1,6 @@
 # VS Code 套件
 
-TMD 官方為 [**Visual Studio Code**](https://code.visualstudio.com/)（以及 Cursor、VSCodium 等相容編輯器）提供了專屬擴充套件，將專業音樂工作站的各項功能直接搬進程式碼編輯器中，讓音樂創作享有與寫程式一樣流暢的體驗。
+TMD 官方為 [**Visual Studio Code**](https://code.visualstudio.com/)（以及 Cursor、VSCodium 等相容編輯器）提供擴充套件，將專業音樂工作站功能帶進程式碼編輯器，讓音樂創作如同寫程式般流暢。
 
 ![VS Code 擴充套件介面](img_zh/vscode_extension.png)
 
@@ -15,7 +15,7 @@ TMD 官方為 [**Visual Studio Code**](https://code.visualstudio.com/)（以及 
 
 ### 方式 B：本地安裝指令碼（開發／免市集）
 
-如果您已經 clone 了 [TmdSwift](https://github.com/zonble/TmdSwift) 儲存庫，可直接使用內建指令碼安裝：
+如果已 clone [TmdSwift](https://github.com/zonble/TmdSwift) 儲存庫，可使用內建指令碼安裝：
 
 ```bash
 # 建立 Symlink 連結（推薦開發者使用）
@@ -25,15 +25,15 @@ TMD 官方為 [**Visual Studio Code**](https://code.visualstudio.com/)（以及 
 ./scripts/install-vscode-extension.sh --copy
 ```
 
-安裝後在 VS Code 按下 `Cmd+Shift+P` ➔ 選擇 **Developer: Reload Window** 即可生效。
+安裝後在 VS Code 按 `Cmd+Shift+P` ➔ 選擇 **Developer: Reload Window** 即可生效。
 
 ### 本機 CLI 依賴
 
-擴充套件的進階匯出與分析功能會自動偵測本機的 `tmd` 執行檔（預設搜尋 `/usr/local/bin/tmd`、`/opt/homebrew/bin/tmd`、`~/.local/bin/tmd` 或系統 `PATH`）。如果使用自訂路徑，可在 VS Code 設定搜尋 `tmd.executablePath` 進行指定。
+擴充套件的進階匯出與分析功能會自動偵測本機 `tmd` 執行檔（預設搜尋 `/usr/local/bin/tmd`、`/opt/homebrew/bin/tmd`、`~/.local/bin/tmd` 或系統 `PATH`）。自訂路徑可在 VS Code 設定中指定 `tmd.executablePath`。
 
 ## 語法高亮與智慧程式碼片段（Snippets）
 
-打開任何 `.tmd` 檔案，擴充套件會提供專屬的語法突顯與結構摺疊：
+打開 `.tmd` 檔案，擴充套件會提供語法突顯與結構摺疊：
 
 - **精確色彩高亮**：
     - 樂譜標頭 `::SCORE::` 與標題 `** 標題 **`。
@@ -51,25 +51,25 @@ TMD 官方為 [**Visual Studio Code**](https://code.visualstudio.com/)（以及 
 
 ## 即時小節檢查與診斷（Live Diagnostics）
 
-VS Code 延伸模組內建了即時節奏編譯器，在您輸入或儲存檔案時自動檢查小節拍數：
+VS Code 延伸模組內建即時節奏編譯器，會在輸入或儲存檔案時檢查小節拍數：
 
-- **紅色波浪線提示**：若某個小節的拍數多出或短少（例如 `<4/4>` 拍號下只寫了 3 拍），編輯器會立即在該小節下方繪製警告波浪線。
-- **問題面板整合（Problems View）**：在 VS Code 底部的 **Problems（問題）** 面板中，會條列出所有出錯的段落名稱、小節序號、預期拍數與實際拍數差距，點擊即可跳轉至出錯行。
+- **紅色波浪線提示**：若小節拍數多出或短少（例如 `<4/4>` 下只寫 3 拍），編輯器會在小節下方標示警告。
+- **問題面板整合（Problems View）**：VS Code 底部的 **Problems（問題）** 面板會列出錯誤段落、小節序號、預期拍數與差距，點擊即可跳至錯誤行。
 
 ## 側邊欄專屬工作區（TMD Studio 活動列）
 
-點擊 VS Code 左側活動列的 **TMD 圖示**，即可展開專屬的側邊欄面板：
+點擊 VS Code 左側活動列的 **TMD 圖示**，即可展開側邊欄面板：
 
 ### 大綱與段落導覽（TMD Outline）
 
-自動解析目前樂譜中的所有段落（`intro`、`verse`、`chorus` 等）與各軌道樂器清單。
+自動解析樂譜中的所有段落（`intro`、`verse`、`chorus` 等）與各軌道樂器清單。
 
 - 點擊段落直接跳轉至對應程式碼位置。
-- 提供直覺的快捷按鈕，可直接單獨播放選定段落或軌道。
+- 提供快捷按鈕，單獨播放選定段落或軌道。
 
 ### 歌曲分析器（Song Inspector）
 
-內建視覺化 Webview 儀表板，即時呈現：
+內建視覺化 Webview 儀表板，呈現：
 
 - **歌手音域分析（Vocal Tessitura）**：顯示主旋律最高音、最低音、跨越半音數與聲部難易度評估（Soprano / Tenor 等）。
 - **調性推論與五度圈軌跡**：利用 K-S 演算法分析調性吻合度與離調轉調走向。
@@ -77,15 +77,15 @@ VS Code 延伸模組內建了即時節奏編譯器，在您輸入或儲存檔案
 
 ### 虛擬鋼琴鍵盤（Virtual Keyboard）
 
-提供可點擊試聽的互動式鋼琴鍵盤，可將音符直接插入至編輯器游標所在位置。
+提供可點擊試聽的互動式鋼琴鍵盤，可將音符插入編輯器游標位置。
 
 ### 哼唱轉譜（Hum to TMD）
 
-透過側邊面板啟動麥克風錄音，利用 Basic Pitch 演算法進行即時人聲哼唱辨識，自動轉換為簡譜段落並填入編輯區。
+透過側邊面板啟動麥克風錄音，利用 Basic Pitch 演算法辨識哼唱，自動轉換為簡譜段落並填入編輯區。
 
 ## 互動式播放器與多格式匯出
 
-在編輯器右上角按鈕、右鍵選單或按 `Cmd+Shift+P` 叫出命令面板（輸入 `TMD:`）即可使用豐富的功能：
+透過編輯器右上角按鈕、右鍵選單或 `Cmd+Shift+P` 開啟命令面板（輸入 `TMD:`）即可使用功能：
 
 ### 試聽與播放
 
@@ -104,7 +104,7 @@ VS Code 延伸模組內建了即時節奏編譯器，在您輸入或儲存檔案
 
 ## 重新編排工具
 
-選取樂譜片段或直接在文件中點擊右鍵，可使用一系列快速重構指令：
+選取樂譜片段或在文件中點擊右鍵，即可使用快速重構指令：
 
 - **TMD: Format Document**（快速鍵 `Shift+Option+F` / `Shift+Alt+F`）：自動縮排、整理小節線與空格。
 - **網格解析度調整**：

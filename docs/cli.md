@@ -1,11 +1,11 @@
 # CLI 工具
 
-TMD 命令列工具（CLI）支援在終端機中進行樂譜解析、小節校驗、多種音樂格式匯出、音訊即時預覽、樂譜重構，以及 AI Agent 技能與 MCP 伺服器的整合。
+TMD 命令列工具（CLI）支援樂譜解析、小節校驗、多格式匯出、音訊預覽、樂譜重構，以及 AI Agent 技能與 MCP 伺服器整合。
 
 TMD CLI 目前提供兩種語言實作版本：
 
 - **tmdlang (Node.js)**：跨平台版本（支援 macOS、Linux 與 Windows，透過 npm 發行）。
-- **TmdSwift**：macOS / Linux 原生編譯高效能版本（可透過 Homebrew 安裝）。
+- **TmdSwift**：macOS / Linux 原生高效能版本（可透過 Homebrew 安裝）。
 
 ## 安裝方式
 
@@ -33,7 +33,7 @@ brew install tmd
 
 ### 解析樂譜結構（`-p, --parse-only`）
 
-僅解析樂譜並在終端機中印出全曲標題、速度、基準音高、小節數與各軌道結構摘要，不產生輸出檔：
+僅解析樂譜，並在終端機印出全曲標題、速度、基準音高、小節數與各軌道摘要，不產生輸出檔：
 
 ```bash
 tmd score.tmd -p
@@ -41,18 +41,18 @@ tmd score.tmd -p
 
 ### 檢查小節長度一致性（`check`）
 
-檢驗每一小節的時值是否符合拍號（`<4/4>`、`<3/4>` 等）。若有拍數過多或不足，會精確指出出錯的段落、軌道、行號與相差拍數：
+檢查每小節時值是否符合拍號（`<4/4>`、`<3/4>` 等）。若拍數過多或不足，會指出段落、軌道、行號與差值：
 
 ```bash
 tmd check score.tmd
 ```
 
 !!! tip "提示"
-    在匯出 MIDI 或其他格式時，TMD 預設會先執行小節檢查。若要忽略檢查強制匯出，可加上 `-f, --force` 參數。
+    匯出 MIDI 或其他格式時，TMD 預設會先檢查小節。若要忽略檢查並強制匯出，可加上 `-f, --force`。
 
 ### 樂譜自動排版（`format`）
 
-將樂譜程式碼自動縮排、整理小節線與間距，並完整保留原本的註解內容：
+自動縮排樂譜程式碼、整理小節線與間距，並保留原有註解：
 
 ```bash
 # 印出格式化後的結果
@@ -64,7 +64,7 @@ tmd format score.tmd -i
 
 ## 音樂格式匯出與音訊渲染
 
-TMD 可以編譯並匯出至主流數位音樂工作站（DAW）、打譜軟體與人聲合成器支援的格式：
+TMD 可編譯並匯出為主流 DAW、打譜軟體與人聲合成器支援的格式：
 
 | 匯出目標 | 指令範例 | 說明 |
 | :--- | :--- | :--- |
@@ -81,7 +81,7 @@ TMD 可以編譯並匯出至主流數位音樂工作站（DAW）、打譜軟體�
 
 ### 終端機即時試聽播放（`--play`）
 
-無須打開任何播放軟體，直接在終端機即時合成並試聽全曲：
+不需開啟播放軟體，即可在終端機合成並試聽全曲：
 
 ```bash
 # 播放全曲
@@ -102,11 +102,11 @@ tmd score.tmd --play --soundfont FluidR3_GM.sf2
 tmd inspect score.tmd
 ```
 
-終端機會印出完整的 ASCII 報表，包含：
+終端機會印出 ASCII 報表，包含：
 
-- **歌手音域分析（Vocal Tessitura）**：計算主旋律軌道最高音、最低音、跨越半音數，並評估演唱難易度與建議聲部（女高音、男低音等）。
-- **調性推論（Tonality）**：以 Krumhansl-Schmuckler (K-S) 演算法推斷全曲調性吻合度與離調轉調。
-- **編曲特徵**：全曲總小節數、秒數長度、使用和弦種類與最高發聲密度（Peak Concurrency）。
+- **歌手音域分析（Vocal Tessitura）**：計算主旋律最高音、最低音與跨越半音數，評估演唱難易度並建議聲部（女高音、男低音等）。
+- **調性推論（Tonality）**：以 Krumhansl-Schmuckler (K-S) 演算法推斷全曲調性吻合度與轉調。
+- **編曲特徵**：全曲小節數、時長、和弦種類與最高發聲密度（Peak Concurrency）。
 - **CI/CD 自動化支援**：加上 `--json` 參數輸出結構化資料：
 
   ```bash
@@ -136,7 +136,7 @@ tmd refactor extract-instrument score.tmd Vocal -o lead.tmd
 
 ### 展開演奏順序為線性樂譜（Inline Orders）
 
-將包含重複、轉調（`-> {?+1}`）的播放順序展開為平鋪直述的單一長樂譜：
+將包含重複、轉調（`-> {?+1}`）的播放順序展開為單一長樂譜：
 
 ```bash
 tmd refactor inline-orders score.tmd -o linear.tmd
@@ -144,7 +144,7 @@ tmd refactor inline-orders score.tmd -o linear.tmd
 
 ## AI Agent 與本機工作流整合
 
-TMD CLI 專為人機協同設計，提供了一鍵配置命令，讓本機的 AI 助理具備音樂編寫與診斷能力：
+TMD CLI 專為人機協同設計，提供一鍵配置命令，讓本機 AI 助理具備音樂編寫與診斷能力：
 
 ### 安裝 AI Agent 技能（`--install-skills`）
 
@@ -152,7 +152,7 @@ TMD CLI 專為人機協同設計，提供了一鍵配置命令，讓本機的 AI
 tmd --install-skills
 ```
 
-自動偵測並安裝 TMD 語言規範、動機發展技巧與對位法手冊到本機 AI 工具目錄：
+自動偵測並將 TMD 語言規範、動機發展技巧與對位法手冊安裝到本機 AI 工具目錄：
 
 - **Claude Code**：`~/.claude/skills/tmd/SKILL.md`
 - **Google Antigravity / Gemini CLI**：`~/.gemini/config/skills/tmd/SKILL.md`
@@ -170,7 +170,7 @@ tmd --mcp
 
 ### 啟動 Language Server Protocol（`--lsp`）
 
-提供標準的 LSP 服務，支援透過 JSON-RPC 與任何支援 LSP 的現代編輯器介接，提供即時語法檢查與補齊。
+提供標準 LSP 服務，透過 JSON-RPC 連接支援 LSP 的編輯器，提供即時語法檢查與補齊。
 
 ```bash
 tmd --lsp

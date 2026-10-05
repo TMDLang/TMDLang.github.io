@@ -1,8 +1,8 @@
 # 開發者指南
 
-TMD 不僅是一門為人類創作者設計的樂譜標記語言，也是一個現代化的音樂編譯與處理框架。
+TMD 不僅是為人類創作者設計的樂譜標記語言，也是現代化的音樂編譯與處理框架。
 
-透過官方 npm 套件 **`tmdlang`**，你可以將 TMD 的語法解析、小節長度檢查、AST 遍歷、多格式轉檔（MIDI / MusicXML / WAV / REAPER / VOCALOID）以及 MCP AI 工具無縫整合進你的 Node.js、TypeScript、Web 應用程式或自動化腳本中。
+透過官方 npm 套件 **`tmdlang`**，可將 TMD 語法解析、小節檢查、AST 遍歷、多格式轉檔（MIDI / MusicXML / WAV / REAPER / VOCALOID）與 MCP AI 工具整合到 Node.js、TypeScript、Web 應用程式或自動化腳本。
 
 ## 安裝套件
 
@@ -14,7 +14,7 @@ npm install tmdlang
 
 ### 解析樂譜（AST 與元數據）
 
-使用 `TmdParser` 可以將 TMD 原始字串解析為完整的抽象語法樹（`Sheet` 物件）：
+使用 `TmdParser` 可將 TMD 原始字串解析為抽象語法樹（`Sheet` 物件）：
 
 ```typescript
 import { TmdParser } from 'tmdlang';
@@ -47,7 +47,7 @@ try {
 
 ### 檢查小節拍數完整度
 
-使用 `TMDMeasureChecker` 可以在不需要執行編譯的情況下，對樂譜進行靜態拍數校驗：
+使用 `TMDMeasureChecker` 可在不編譯的情況下，靜態校驗樂譜拍數：
 
 ```typescript
 import { TMDMeasureChecker } from 'tmdlang';
@@ -71,7 +71,7 @@ if (issues.length > 0) {
 
 ### 生成 Standard MIDI 二進位檔案（Uint8Array）
 
-使用 `TMDMIDIGenerator` 可以將 AST 轉換為標準 MIDI 格式的 `Uint8Array`，方便直接存檔或傳送給音訊引擎：
+使用 `TMDMIDIGenerator` 可將 AST 轉換為標準 MIDI 格式的 `Uint8Array`，方便存檔或傳送給音訊引擎：
 
 ```typescript
 import * as fs from 'node:fs';
@@ -135,7 +135,7 @@ const wavBytes: Uint8Array = TMDWAVRenderer.renderWAV(sheet);
 npx tmdlang --install-mcp
 ```
 
-指令會自動偵測系統中的 Claude Desktop、Cursor 與 Gemini 設定檔，並寫入啟動配置。
+指令會自動偵測 Claude Desktop、Cursor 與 Gemini 設定檔，並寫入啟動配置。
 
 ### 手動設定範例（Claude Desktop / Cursor）
 
@@ -154,7 +154,7 @@ npx tmdlang --install-mcp
 
 ### 提供之 MCP Tools
 
-當 MCP 伺服器掛載成功後，AI Agent 可以呼叫以下 4 個工具：
+MCP 伺服器掛載後，AI Agent 可呼叫以下 4 個工具：
 
 | 工具名稱 | 說明 | 輸入參數 |
 | :--- | :--- | :--- |
@@ -165,7 +165,7 @@ npx tmdlang --install-mcp
 
 ## 語言伺服器協定（LSP）支援
 
-如果你想在自訂的編輯器（如 Neovim、Sublime Text、Emacs）中獲得 TMD 語法診斷與補全：
+若要在自訂編輯器（如 Neovim、Sublime Text、Emacs）中使用 TMD 語法診斷與補全：
 
 ```bash
 # 透過 stdio 啟動 JSON-RPC LSP 服務

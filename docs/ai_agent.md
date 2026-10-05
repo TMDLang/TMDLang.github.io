@@ -1,22 +1,22 @@
 # AI 協同寫歌
 
-無論你使用的是 ChatGPT、Claude、Google Gemini，或是終端機與編輯器中的 AI 助手（如 Claude Code、Cursor、GitHub Copilot、Antigravity），**純文字的 TMD 是人類與 AI 之間的理想音樂協作語言**。
+無論使用 ChatGPT、Claude、Google Gemini，或終端機與編輯器中的 AI 助手（如 Claude Code、Cursor、GitHub Copilot、Antigravity），**純文字 TMD 都是人類與 AI 的理想音樂協作語言**。
 
-傳統格式（如 MusicXML 或 LilyPond）充斥著繁瑣的排版標籤，AI 很容易遺漏括號或計算錯誤，人類也極難一眼看懂；而 Suno、Udio 等波形生成工具則是黑盒子，無法依照你腦中確切的旋律進行局部微調。TMD 以「首調唱名（簡譜）」與「模組化段落」為核心，讓你可以像 Pair Programming（結對編程）一樣，與 AI 一句一句把歌寫出來。
+傳統格式（如 MusicXML 或 LilyPond）充斥繁瑣排版標籤，AI 容易遺漏括號或計算錯誤，人類也難以一眼看懂；Suno、Udio 等波形生成工具則是黑盒子，無法依照腦中的旋律局部微調。TMD 以「首調唱名（簡譜）」與「模組化段落」為核心，讓你像 Pair Programming（結對編程）一樣與 AI 逐句寫歌。
 
 ![在 Antigravity 中協同寫歌](img_zh/cowork.png)
 
 ## 準備工作：讓 AI 理解 TMD 語法
 
-大型語言模型雖然具備樂理知識，但預設可能不完全熟悉 TMD 的最新語法（例如升降記號順序 `1'^` 或樂軌進入位移 `@|+4|`）。
+大型語言模型雖具備樂理知識，預設卻不一定熟悉 TMD 最新語法（如升降記號順序 `1'^` 或樂軌進入位移 `@|+4|`）。
 
 ### 方法 A：直接複製 TMD 規範給 AI（最簡單）
 
-在開始聊天的第一句，把 [TMD 語法規格](syntax.md) 的重點或是專案中的 `SKILL.md` 貼給 AI。
+開始聊天時，將 [TMD 語法規格](syntax.md) 的重點或專案中的 `SKILL.md` 貼給 AI。
 
 ### 方法 B：一鍵安裝 AI Agent Skill / MCP（進階使用者）
 
-如果你使用的是本地 Agent（Claude Code、Cursor、Gemini CLI、Antigravity 等）：
+如果使用本地 Agent（Claude Code、Cursor、Gemini CLI、Antigravity 等）：
 
 ```bash
 # 自動安裝官方 Skill 至本機 AI Agent 目錄
@@ -30,7 +30,7 @@ tmd --install-mcp
 
 ### 模式一：你出旋律，AI 幫你自動配器（Lead-to-Arrangement）
 
-這是最常見的寫歌場景——你哼出或寫好了一段主歌旋律，不知道怎麼配伴奏，讓 AI 幫你加上和弦吉他、貝斯與鼓組。
+這是最常見的寫歌場景：哼出或寫好主歌旋律，讓 AI 加上和弦吉他、貝斯與鼓組。
 
 !!! example "你的 Prompt"
     「這是我寫好的主歌主旋律（TMD 格式）：
@@ -50,14 +50,14 @@ tmd --install-mcp
 
 ### 模式二：靈感卡住時，用短動機讓 AI 延伸樂句（Motif Continuation）
 
-腦中常常冒出一段 2 小節的好聽旋律，但不知道副歌或主歌接下來該怎麼接？
+腦中常冒出一段 2 小節的旋律，卻不知道副歌或主歌該如何延續？
 
 !!! example "你的 Prompt"
     「我有一個 2 小節的動機：`1 2 3 5 | 6 5 3 -`（4/4 拍，`<4*>` 網格）。請運用古典作曲的『問答樂句（問句與答句）』技巧，幫我把它發展成一個完整的 8 小節 A 段旋律，並在第 8 小節穩定終止在主音 `1`。」
 
 ### 模式三：探索不同曲風的和弦重配（Re-Harmonization）
 
-TMD 的和弦是獨立的標記 `[Cmaj7]`、`[1]`、`[6m]`，你可以讓 AI 針對同一段旋律，提出不同曲風的和聲方案。
+TMD 的和弦使用獨立標記 `[Cmaj7]`、`[1]`、`[6m]`，可讓 AI 針對同一段旋律提出不同曲風的和聲方案。
 
 !!! example "你的 Prompt"
     「這是我的副歌旋律：
@@ -76,7 +76,7 @@ TMD 的和弦是獨立的標記 `[Cmaj7]`、`[1]`、`[6m]`，你可以讓 AI 針
 
 ### 模式四：動態層次鋪陳與進場安排（Textural Layering）
 
-藉由 TMD 獨特的 `@|+N|`（小節延遲進場）與 `@|-1|`（弱起過門），指揮 AI 製造情緒層次。
+利用 TMD 的 `@|+N|`（小節延遲進場）與 `@|-1|`（弱起過門），讓 AI 製造情緒層次。
 
 !!! example "你的 Prompt"
     「我正在規劃歌曲的結構動態，請幫我寫一個段落配置：
@@ -88,7 +88,7 @@ TMD 的和弦是獨立的標記 `[Cmaj7]`、`[1]`、`[6m]`，你可以讓 AI 針
 
 ### 模式五：規劃全曲行進與轉調升 Key（Macro Song Structuring）
 
-各段落（`intro`、`verse`、`chorus`、`bridge`）寫好後，讓 AI 幫你排定播放順序與轉調規劃。
+各段落（`intro`、`verse`、`chorus`、`bridge`）完成後，讓 AI 排定播放順序與轉調。
 
 !!! example "你的 Prompt"
      「我已經寫好了 `intro`、`verse`、`chorus`、`bridge` 與 `outro` 五個段落。
@@ -107,7 +107,7 @@ TMD 的和弦是獨立的標記 `[Cmaj7]`、`[1]`、`[6m]`，你可以讓 AI 針
 
 ## 人機協同的「即時試聽與除錯迴圈」
 
-在 Chat AI 中寫歌，最關鍵的是形成 **「Prompt ➔ 生成 ➔ 試聽驗證 ➔ 回饋修正」** 的緊密閉環：
+在 Chat AI 中寫歌，關鍵是形成 **「Prompt ➔ 生成 ➔ 試聽驗證 ➔ 回饋修正」** 的閉環：
 
 ```mermaid
 flowchart TD

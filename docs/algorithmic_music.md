@@ -1,26 +1,26 @@
 # 演算法生成音樂
 
-在生成式 AI（LLM、Diffusion）大行其道之前，電腦音樂領域早在數十年前就發展出極為嚴謹的**演算法音樂（Algorithmic Composition）**。
+在生成式 AI（LLM、Diffusion）普及前，電腦音樂領域早已發展出嚴謹的**演算法音樂（Algorithmic Composition）**。
 
-從巴哈時代的數學對位法、莫札特的「音樂擲骰子遊戲（Musikalisches Würfelspiel）」，到現代的細胞自動機（Cellular Automata）與馬可夫鏈（Markov Chain），音樂本質上就蘊含著高度的數學結構。
+從巴哈時代的數學對位法、莫札特的「音樂擲骰子遊戲（Musikalisches Würfelspiel）」，到現代的細胞自動機（Cellular Automata）與馬可夫鏈（Markov Chain），音樂一直蘊含高度數學結構。
 
-TMD 是一套純文字的音樂記譜語法，這意味著：**你不一定要依賴 AI 大模型，只要用傳統的程式語言（Python、JavaScript、Swift）或是 TMD 內建的 S-Expression 巨集，就能寫出完全確定、可控、且富有數學美感的生成音樂！**
+TMD 是純文字音樂記譜語法，因此：**不必依賴 AI 大模型，只要使用 Python、JavaScript、Swift 等程式語言，或 TMD 內建的 S-Expression 巨集，就能寫出確定、可控且富有數學美感的生成音樂！**
 
 ## 為什麼使用傳統演算法生成音樂？
 
 相較於黑盒子機率模型，確定性演算法具有以下特性：
 
-1. **確定性與可重現（Deterministic）**：相同的種子（Seed）或公式會產生完全一致的音符與節奏。
-2. **免算力與低延遲**：不需要 GPU 算力或網路 API，直接透過本機腳本即可快速運算大量小節。
-3. **精確的數學對位邏輯**：卡農（Canon）、賦格（Fugue）、碎形幾何或費氏數列等具備明確規則的音樂結構，適合直接透過演算法邏輯表達。
+1. **確定性與可重現（Deterministic）**：相同種子（Seed）或公式會產生一致的音符與節奏。
+2. **免算力與低延遲**：不需 GPU 或網路 API，透過本機腳本即可快速運算大量小節。
+3. **精確的數學對位邏輯**：卡農（Canon）、賦格（Fugue）、碎形幾何或費氏數列等具明確規則的結構，適合用演算法表達。
 
 ## TMD 內建的 S-Expression 巨集
 
-TMD 內建了函數式巨集語法（S-Expression Macro），可直接在樂譜中透過代數轉換語法實現對位變換：
+TMD 內建函數式巨集語法（S-Expression Macro），可直接在樂譜中以代數轉換實現對位變換：
 
 ### 嚴格卡農對位（Canon）
 
-在古典音樂中，卡農是指多個聲部演奏同一個主題，但各聲部在時間上依序錯開進場（如著名的帕海貝爾《D 大調卡農》）：
+在古典音樂中，卡農指多個聲部演奏同一主題，依序錯開進場（如帕海貝爾《D 大調卡農》）：
 
 ```tmd
 ::SCORE::
@@ -39,11 +39,11 @@ Theme {
 -> (canon Theme (Violin1 Violin2 Violin3) 2) ->#
 ```
 
-在 Web Studio 中，也提供了一套卡農產生工具。
+Web Studio 也提供卡農產生工具。
 
 ### 數學變形運算（Inversion, Retrograde, Transpose）
 
-TMD 巨集支援古典巴洛克與十二音技法（Serialism）的核心數學變換：
+TMD 巨集支援巴洛克與十二音技法（Serialism）的核心數學變換：
 
 | 運算子 | 語法範例 | 數學意義 |
 | :--- | :--- | :--- |
@@ -55,7 +55,7 @@ TMD 巨集支援古典巴洛克與十二音技法（Serialism）的核心數學�
 
 ### 聲部層疊與固定低音循環（Layer & Loop）
 
-你可以將數學變形後的主題與固定低音（Ground Bass）在時間軸上重疊：
+可將數學變形後的主題與固定低音（Ground Bass）在時間軸上重疊：
 
 ```tmd
 /* 大提琴循環低音 8 次，小提琴演奏變形主題 */
@@ -67,7 +67,7 @@ TMD 巨集支援古典巴洛克與十二音技法（Serialism）的核心數學�
 
 ## 用 Python 寫演算法生成 TMD
 
-由於 TMD 是最純粹的文字格式，任何程式語言都可以用字串格式化直接輸出 `.tmd` 檔案，並透過 `tmd` CLI 即時編譯成 MIDI 或 WAV！
+TMD 是純文字格式，任何程式語言都能以字串格式化輸出 `.tmd` 檔案，再透過 `tmd` CLI 編譯成 MIDI 或 WAV！
 
 ### 範例 A：費氏數列旋律生成器（Fibonacci Melody）
 
@@ -109,7 +109,7 @@ melody:Marimba@|0|{{
 generate_fibonacci_tmd()
 ```
 
-執行後一鍵試聽或匯出：
+執行後即可試聽或匯出：
 
 ```bash
 python fibonacci_tmd.py
@@ -119,7 +119,7 @@ tmd fibonacci.tmd -m fib.mid     # 匯出標準 MIDI
 
 ### 範例 B：馬可夫鏈和弦進行生成（Markov Chain Harmonies）
 
-如果你想要創作具有某種風格（如爵士或 J-Pop）、但每次都有不同可能性的和弦，可以使用**一階馬可夫轉移矩陣**：
+若要創作具有特定風格（如爵士或 J-Pop）且每次結果不同的和弦，可使用**一階馬可夫轉移矩陣**：
 
 ```python
 import random
@@ -162,7 +162,7 @@ with open("markov.tmd", "w") as f:
 
 ### 範例 C：康威生命遊戲生成節奏打擊樂（Cellular Automata Drums）
 
-將康威生命遊戲（Conway's Game of Life）的二維網格細胞生滅狀態，投影成 TMD 第 10 軌的爵士鼓打擊節奏：
+將康威生命遊戲（Conway's Game of Life）的二維網格細胞狀態，投影成 TMD 第 10 軌的爵士鼓節奏：
 
 - 細胞存活 ➔ 輸出大鼓 `B` 或小鼓 `S`。
 - 細胞死亡 ➔ 輸出閉合鈸 `X` 或休止符 `0`。
@@ -170,7 +170,7 @@ with open("markov.tmd", "w") as f:
 
 ## 結合演算法與 AI 協同
 
-在實際工作流中，也可以將演算法生成的骨架與大語言模型的語意理解相互搭配：
+在實際工作流中，也可結合演算法生成的骨架與大語言模型的語意理解：
 
 ```mermaid
 flowchart TD
@@ -179,6 +179,6 @@ flowchart TD
     C -->|"小節檢查與音色混音"| D["完成作品"]
 ```
 
-1. **演算法產生結構**：利用數列或轉移矩陣運算出多小節的對位或和弦進行。
-2. **AI 進行細節編配**：將產生的 TMD 文字提供給語言模型補充動態記號（如 `{p}`、`{f}`）或指定配器伴奏。
+1. **演算法產生結構**：利用數列或轉移矩陣運算出多小節對位或和弦進行。
+2. **AI 進行細節編配**：將 TMD 文字交給語言模型，補充動態記號（如 `{p}`、`{f}`）或指定配器伴奏。
 3. **編譯校驗**：使用 `tmd check` 檢查小節長度，確保語法完整。
