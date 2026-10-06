@@ -50,7 +50,7 @@ Your browser does not support the audio element.
 - [在 TMD Studio 中開啟](https://tmdlang.github.io/Tmd-TS/?gist=2c9542933d4974659fd92ba689b1acf1)
 - [在 Gist 中查看](https://gist.github.com/2c9542933d4974659fd92ba689b1acf1)
 
-### 民國三十五年三月的黃埔港
+### 民國三十五年三月
 
 宗治眼前是一大群的海上巨獸。管樂器奏出機械的低鳴。
 
