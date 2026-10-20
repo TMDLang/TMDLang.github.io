@@ -83,4 +83,8 @@ nav:
   - 語法規格: syntax.md
   - 常見問答: faq.md
   - 開發者指南: developer.md
-  - GitHub: https://github.com/tmdlang/
+  - 連結:
+    - GitHub: https://github.com/tmdlang/
+    - "TMD Studio": https://tmdlang.github.io/Tmd-TS/
+  - 相關計畫:
+    - "Re:Shoka - 日治時期臺灣公學校與小學校唱歌教材數位重建計畫": https://tmdlang.github.io/reshoka/
