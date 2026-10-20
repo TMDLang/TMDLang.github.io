@@ -49,3 +49,7 @@ Your browser does not support the audio element.
 ```
 請使用室內樂編制，將這五首歌曲組合成一首組曲，每首歌之前加入適當的過場，並在最後使用五首歌的旋律組合成一段賦格。
 ```
+
+## 相關計畫
+
+請參考 [Re:Shoka - 日治時期臺灣公學校與小學校唱歌教材數位重建計畫](https://tmdlang.github.io/reshoka/)
