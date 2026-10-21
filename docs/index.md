@@ -1,3 +1,11 @@
+---
+title: TMD — 用文字記錄旋律、創作音樂與 AI 協作的工作流
+description: TMD（Timebase Markdown / Textual Music Description）是用簡單文字記錄旋律、和弦與音樂段落的語法，提供網頁編輯器、MIDI 與樂譜匯出、歌曲分析，以及人與 AI 協作創作音樂的完整工作流。
+keywords: TMD, Timebase Markdown, Textual Music Description, 文字樂譜, 簡譜, 音樂 DSL, AI 作曲, MIDI, MusicXML, 音樂創作, TMD Studio
+og_type: website
+image: img_zh/welcome.png
+---
+
 # TMD 音樂/樂隊電腦語言
 
 In memory of Chen, Chih-Han / aguai (阿怪, 1974–2019)

@@ -1,3 +1,10 @@
+---
+title: TMD 語法規格 — 文字記譜與作曲語言參考
+description: 完整說明 TMD（Timebase Mark Down）的檔案結構、首調唱名、段落、小節、拍號、速度、轉調與播放指令語法。
+keywords: TMD 語法, Timebase Markdown, 文字記譜, 簡譜, 音樂 DSL, 相對音高, 作曲語言
+schema_type: TechArticle
+---
+
 # 語法規格
 
 TMD（Timebase Mark Down）是為音樂創作者、編曲人與 AI 協同設計的純文字記譜語言。它捨棄傳統排版與繪譜格式（如 MusicXML、LilyPond、ABC）的繁重標籤與大量休止符，以**首調唱名（簡譜）**、**模組化歌曲段落**與**直覺的播放流程指令**為核心。

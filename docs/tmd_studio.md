@@ -1,3 +1,10 @@
+---
+title: TMD Studio — 瀏覽器版文字音樂工作站
+description: 使用 TMD Studio 在瀏覽器中編寫文字樂譜、哼唱輸入旋律、即時試聽多軌音樂，並匯出 MIDI、MusicXML、LilyPond 與音訊檔案。
+keywords: TMD Studio, 線上作曲, 瀏覽器音樂工作站, 文字樂譜, 哼唱轉譜, MIDI, MusicXML, LilyPond
+schema_type: TechArticle
+---
+
 # TMD Studio
 
 **網址**：[https://tmdlang.github.io/Tmd-TS/](https://tmdlang.github.io/Tmd-TS/)

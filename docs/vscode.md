@@ -1,3 +1,10 @@
+---
+title: TMD VS Code 套件 — 在編輯器中撰寫文字樂譜
+description: TMD 官方 VS Code 擴充套件提供語法高亮、小節錯誤診斷、歌曲分析器與 AI 協作功能，支援 VS Code、Cursor 與 VSCodium。
+keywords: TMD VS Code, VS Code 擴充套件, 文字樂譜, 音樂程式設計, Cursor, VSCodium
+schema_type: TechArticle
+---
+
 # VS Code 套件
 
 TMD 官方為 [**Visual Studio Code**](https://code.visualstudio.com/)（以及 Cursor、VSCodium 等相容編輯器）提供擴充套件，將專業音樂工作站功能帶進程式碼編輯器，讓音樂創作如同寫程式般流暢。

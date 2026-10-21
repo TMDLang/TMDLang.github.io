@@ -1,3 +1,10 @@
+---
+title: AI 協同寫歌 — 使用 TMD 與 AI 創作音樂
+description: 以 TMD 作為人類與 ChatGPT、Claude、Gemini 及程式編輯器 AI 助手之間的音樂協作語言，建立可試聽、可校驗、可持續修改的創作流程。
+keywords: AI 作曲, AI 協同寫歌, TMD, ChatGPT 音樂, Claude 音樂, Gemini 音樂, 文字樂譜, MCP
+schema_type: TechArticle
+---
+
 # AI 協同寫歌
 
 無論使用 ChatGPT、Claude、Google Gemini，或終端機與編輯器中的 AI 助手（如 Claude Code、Cursor、GitHub Copilot、Antigravity），**純文字 TMD 都是人類與 AI 的理想音樂協作語言**。

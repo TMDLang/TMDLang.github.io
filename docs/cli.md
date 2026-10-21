@@ -1,3 +1,10 @@
+---
+title: TMD CLI — 解析、校驗與匯出文字樂譜
+description: TMD CLI 支援樂譜解析、小節校驗、多格式匯出、音訊預覽、樂譜重構，以及 AI Agent 與 MCP 伺服器整合。
+keywords: TMD CLI, tmdlang, TmdSwift, 命令列樂譜, MIDI 匯出, MusicXML, MCP, AI Agent
+schema_type: TechArticle
+---
+
 # CLI 工具
 
 TMD 命令列工具（CLI）支援樂譜解析、小節校驗、多格式匯出、音訊預覽、樂譜重構，以及 AI Agent 技能與 MCP 伺服器整合。

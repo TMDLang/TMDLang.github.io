@@ -7,6 +7,7 @@ copyright: Released under the MIT License. In memory of Chen, Chih-Han / aguai (
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh-Hant
   palette:
     # Light mode
@@ -35,6 +36,7 @@ theme:
     - content.code.copy
 
 markdown_extensions:
+  - meta
   - admonition
   - pymdownx.details
   - pymdownx.superfences:
